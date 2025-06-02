@@ -1,8 +1,112 @@
-body {
-    font-family: sans-serif;
-    background-color: #f0f0f0; /* A light gray background */
+/* Basic Reset (optional but good practice) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes width/height calculations more intuitive */
 }
 
-h1 {
-    color: navy;
+body {
+    font-family: Arial, sans-serif; /* Choose a nice, readable font later */
+    line-height: 1.6;
+    color: #333; /* Dark gray for text */
+}
+
+.container {
+    width: 80%; /* Or a fixed width like 1100px */
+    max-width: 1200px; /* Prevents it from getting too wide */
+    margin: 0 auto; /* Centers the container */
+    padding: 0 20px; /* Adds some space on the sides */
+}
+
+/* Header Styling */
+header {
+    background-color: #f4f4f4; /* Light gray background for header */
+    padding: 1rem 0; /* 1rem top/bottom padding, 0 left/right */
+    border-bottom: 1px solid #ddd;
+}
+
+header #logo {
+    float: left; /* Simple way to put logo on left */
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header nav {
+    float: right; /* Simple way to put nav on right */
+    margin-top: 0.5rem; /* Adjust as needed */
+}
+
+header nav ul {
+    list-style: none; /* Removes bullet points */
+}
+
+header nav ul li {
+    display: inline-block; /* Makes list items horizontal */
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Clearfix for floated elements in header (important!) */
+header .container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Hero Section Styling */
+#hero {
+    background: #333; /* Placeholder dark background */
+    /* You'll likely want a background image here later */
+    /* background-image: url('../images/your-hero-image.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    color: #fff; /* White text on dark background */
+    padding: 4rem 0; /* More padding to make it prominent */
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 2.5rem; /* Larger font for main headline */
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffa500; /* Orange - stands out */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.cta-button:hover {
+    background-color: #cc8400; /* Darker orange on hover */
+}
+
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    background-color: #333;
+    color: #fff;
+}
+#logo img {
+    height: 100px; 
+    width: 250px;  
+    display: block; 
 }
