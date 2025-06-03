@@ -1,0 +1,84 @@
+/* --- About Page Specific Styles --- */
+#about-page {
+    background-color: #f9f9f9; /* Light background for the entire section */
+    padding: 4rem 1.5rem; /* Keep the page section padding */
+}
+
+#about-page h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #121d35;
+    margin-bottom: 2.5rem;
+}
+
+.about-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: flex-start;
+    background-color: #ffffff; /* White background for the box */
+    border-radius: 12px;       /* Rounded corners for the box */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for the box */
+    padding: 3rem;            /* Padding inside the box */
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.about-text p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #454545;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.image-caption {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-layout {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 2rem; /* Adjust padding for smaller screens */
+    }
+
+    .about-text {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 2rem;
+    }
+}
