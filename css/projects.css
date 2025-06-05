@@ -1,0 +1,147 @@
+/* --- Project Detail Page - Revised Gallery Styles --- */
+
+#project-detail-page {
+    background-color: #ffffff; /* Or your preferred light background */
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.6rem; /* Prominent project title */
+    color: #121d35;
+    margin-bottom: 1rem;
+}
+
+.project-intro-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555e6d;
+    max-width: 800px; /* Constrain width for readability */
+    margin: 0 auto 1.5rem auto;
+}
+
+.back-to-portfolio-link {
+    display: inline-block;
+    color: #16233f; /* Your accent color */
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid #180060;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-to-portfolio-link:hover {
+    background-color: #180060;
+    color: #ffffff;
+}
+
+.room-makeover h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #121d35;
+    text-align: center;
+    margin-bottom: 2.5rem; /* Increased space */
+    border-bottom: 2px solid #b58a40;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Container for the side-by-side Before and After galleries */
+.before-after-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns for Before and After */
+    gap: 2.5rem; /* Increased gap between Before and After sections */
+    margin-bottom: 1.5rem;
+}
+
+.image-gallery-column {
+    /* Each column (Before or After) */
+}
+
+.gallery-title { /* For "Before" and "After" headings */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #121d35;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gallery-grid {
+    display: grid;
+    /* --- MODIFICATION FOR LARGER IMAGES --- */
+    /* Increase the min value significantly so fewer columns fit */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Adjust 240px as needed */
+    gap: 1.25rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto; /* Let height adjust to maintain aspect ratio by default */
+    aspect-ratio: 4 / 3; /* Or 1/1 for square, 16/9 for wider. Enforces consistency. */
+    object-fit: cover; /* Ensures image fills the aspect ratio box, may crop */
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: block; /* Removes extra space below image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crop-focus-sink {
+    object-position: center 75%; /* Example: Focuses lower down in the image (moves image up) */
+       object-position: bottom center;    /* Shows the bottom-center of the image */
+ 
+    */
+}
+
+.gallery-grid a:hover img { /* If images are wrapped in links for a lightbox */
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.room-description { /* (You likely have this from before) */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #454545;
+    max-width: 750px;
+    margin: 1.5rem auto 0 auto; /* Adjusted margin */
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Medium screens, stack Before/After a bit earlier perhaps */
+    .before-after-showcase {
+        /* You might keep 2 columns here if space allows, or stack earlier */
+        /* gap: 1.5rem; */
+    }
+    .gallery-grid {
+        /* minmax(120px, 1fr) might allow more images per row on tablets */
+    }
+}
+
+@media (max-width: 768px) { /* Tablets and smaller */
+    .room-makeover h2 {
+        font-size: 1.6rem;
+    }
+    .gallery-title {
+        font-size: 1.3rem;
+    }
+    .before-after-showcase {
+        grid-template-columns: 1fr; /* Stack Before and After galleries */
+        gap: 2rem; /* Gap when stacked */
+    }
+    .gallery-grid {
+        /* Example: 2 images per row on mobile for the mini-galleries */
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.75rem;
+    }
+}
