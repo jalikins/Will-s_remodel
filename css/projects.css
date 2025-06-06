@@ -87,13 +87,9 @@
     gap: 1.25rem;           /* 'gap' works great with flexbox too! */
 }
 
-/* --- Add this new rule for the items inside the gallery --- */
-/* This controls the size of each image container in the flex layout */
 .gallery-grid > a {
     flex: 0 1 240px; /* flex-grow, flex-shrink, flex-basis */
-    /* You can adjust the '240px' value to make images larger or smaller,
-       just like you did with minmax() in the grid version.
-       e.g., '280px' for larger images. */
+  
 }
 
 .gallery-grid img {
@@ -108,7 +104,7 @@
 }
 
 .crop-focus-sink {
-    object-position: bottom center;    /* Shows the bottom-center of the image */
+    object-position: bottom center;    /* For the tall images */
 }
 
 .gallery-grid a:hover img { /* If images are wrapped in links for a lightbox */
