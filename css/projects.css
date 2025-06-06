@@ -61,6 +61,10 @@
     margin-bottom: 1.5rem;
 }
 
+.before-after-showcase > .image-gallery-column:only-child {
+    grid-column: 1 / -1; /* Span from the first grid line to the last */
+}
+
 .image-gallery-column {
     /* Each column (Before or After) */
 }
@@ -77,11 +81,19 @@
 }
 
 .gallery-grid {
-    display: grid;
-    /* --- MODIFICATION FOR LARGER IMAGES --- */
-    /* Increase the min value significantly so fewer columns fit */
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Adjust 240px as needed */
-    gap: 1.25rem;
+    display: flex;          /* 1. Change display from 'grid' to 'flex' */
+    flex-wrap: wrap;        /* 2. Allow items to wrap onto new lines */
+    justify-content: center;/* 3. THIS IS THE KEY: It centers the items horizontally */
+    gap: 1.25rem;           /* 'gap' works great with flexbox too! */
+}
+
+/* --- Add this new rule for the items inside the gallery --- */
+/* This controls the size of each image container in the flex layout */
+.gallery-grid > a {
+    flex: 0 1 240px; /* flex-grow, flex-shrink, flex-basis */
+    /* You can adjust the '240px' value to make images larger or smaller,
+       just like you did with minmax() in the grid version.
+       e.g., '280px' for larger images. */
 }
 
 .gallery-grid img {
@@ -96,10 +108,7 @@
 }
 
 .crop-focus-sink {
-    object-position: center 75%; /* Example: Focuses lower down in the image (moves image up) */
-       object-position: bottom center;    /* Shows the bottom-center of the image */
- 
-    */
+    object-position: bottom center;    /* Shows the bottom-center of the image */
 }
 
 .gallery-grid a:hover img { /* If images are wrapped in links for a lightbox */
@@ -118,15 +127,6 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 992px) { /* Medium screens, stack Before/After a bit earlier perhaps */
-    .before-after-showcase {
-        /* You might keep 2 columns here if space allows, or stack earlier */
-        /* gap: 1.5rem; */
-    }
-    .gallery-grid {
-        /* minmax(120px, 1fr) might allow more images per row on tablets */
-    }
-}
 
 @media (max-width: 768px) { /* Tablets and smaller */
     .room-makeover h2 {
