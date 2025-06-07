@@ -1,0 +1,42 @@
+/* --- Gallery Grid System Styles --- */
+/* This can be used for any gallery on your site, including the main one
+   and the ones on your project detail pages. */
+
+.gallery_grid {
+    display: grid; /* 1. Establishes the grid layout */
+
+    /* 2. Defines the columns. This is the key to making it responsive. */
+    /* - auto-fit: Creates as many columns as will fit in the available space. */
+    /* - minmax(280px, 1fr): Each column will be a minimum of 280px wide. If there's
+       extra space, all columns will share it equally (1fr). */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 1.5rem; /* 3. Sets the space between the images */
+}
+
+/* Style for the image container (the 'a' tag) if needed */
+.gallery_grid a {
+    display: block; /* Ensures the image styles below work correctly */
+    text-decoration: none;
+    border-radius: 8px; /* Match image radius for hover effects */
+    overflow: hidden; /* Keeps image inside the rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery_grid a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Styling for the actual images inside the grid */
+.gallery_grid img {
+    width: 100%; /* Makes the image fill the width of its grid cell */
+    height: auto;
+    display: block; /* Removes extra space that can sometimes appear below images */
+    
+    /* This creates a consistent size for all images, preventing jagged rows.
+       It will crop the image to fit, which is usually desired in a uniform grid. */
+    aspect-ratio: 4 / 3; /* Common aspect ratio. Use 1/1 for square, 16/9 for wide. */
+    object-fit: cover;   /* This is what makes the image fill the aspect-ratio box without stretching. */
+}

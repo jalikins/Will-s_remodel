@@ -11,10 +11,10 @@ body {
 }
 
 .container {
-    width: 90%; /* Using percentage can be more fluid than 80% */
+    width: 90%; 
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem; /* Adjusted padding slightly (20px is ~1.25rem) */
+    padding: 0 1rem; 
 }
 
 /* --- Header Styling --- */
@@ -22,15 +22,6 @@ header {
     background-color: #F2F2F2;
     padding: .5rem 0;
     border-bottom: 1px solid #ddd; /* Changed .5px to 1px, as .5px might not render consistently */
-    /* For sticky header, you would add:
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    Make sure to add padding-top to the body or the next element (#hero) if you make it fixed.
-    */
 }
 
 /* SUGGESTION: Use Flexbox for better alignment of logo and nav */
@@ -65,17 +56,15 @@ header nav {
 
 header nav ul {
     list-style: none;
-    /* display: flex; */ /* Optional: if you want to use flex for li spacing too */
-    /* gap: 5px; */    /* Optional: if using display:flex on ul */
 }
 
 header nav ul li {
     display: inline-block;
-    margin-left: 15px; /* Reduced from 20px, adjust as needed */
+    margin-left: 15px; 
 }
 
 header nav ul li:first-child {
-    margin-left: 0; /* Remove margin from the first nav item */
+    margin-left: 0; 
 }
 
 header nav ul li a {
@@ -92,18 +81,17 @@ header nav ul li a {
 header nav ul li a:hover,
 header nav ul li a.active {
     color: #180060;
-    /* background-color: #f0f0f0; */ /* Keeping this commented as per your original */
 }
 
 
 /* Hero Section Styling */
 #hero {
-    background-image: url('../images/front_page.webp');
+    background-image: url('../images/front_page/front_page.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
-    padding: 8rem 0; /* Reduced from 10rem, adjust to your liking */
+    padding: 12rem 0; 
     text-align: center;
   
 }
@@ -111,24 +99,24 @@ header nav ul li a.active {
 #hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    font-family: 'Montserrat', sans-serif; /* Added font */
+    font-family: 'Montserrat', sans-serif; 
 }
 
 #hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    font-family: 'Roboto', sans-serif; /* Added font */
+    font-family: 'Roboto', sans-serif; 
 }
 
 .cta-button {
     display: inline-block;
     background-color: #16233f;
     color: #fff;
-    padding: 12px 25px; /* Consistent padding */
+    padding: 12px 25px; 
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.1rem;
-    font-family: 'Montserrat', sans-serif; /* Added font */
+    font-family: 'Montserrat', sans-serif; 
     font-weight: 600; /* Added weight */
     transition: background-color 0.3s ease;
 }
@@ -190,7 +178,7 @@ header nav ul li a.active {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    text-align: center; /* Add text-align here if you want content centered */
+    text-align: center; 
 }
 
 .service-item h3 {
@@ -199,7 +187,7 @@ header nav ul li a.active {
     font-weight: 700;
     color: #121d35;
     margin-bottom: 0.75rem;
-    /* align-items: center; */ /* REMOVE: This is a flex container property, h3 is an item */
+    
 }
 
 .service-item p {
@@ -236,14 +224,6 @@ header nav ul li a.active {
     background-color: #f8f9fa;
 }
 
-#remodeling-process h2 { /* This inherits from .page-section h2, which is good. No need to redefine unless different */
-    /* text-align: center; */
-    /* font-family: 'Montserrat', sans-serif; */
-    /* font-size: 2.4rem; */
-    /* font-weight: 700; */
-    /* color: #121d35; */
-    /* margin-bottom: 3rem; */
-}
 
 .process-grid {
     display: grid;
@@ -280,14 +260,14 @@ header nav ul li a.active {
     color: #16233f;
     margin-right: 1rem;
     line-height: 1;
-    background-color: #0a23577d; /* Adjusted alpha for subtlety from your example */
-    border-radius: 50%; /* For a circle, width and height should be equal */
-    min-width: 40px;   /* Example width */
-    height: 40px;    /* Example height */
+    background-color: #0a23577d; 
+    border-radius: 50%; 
+    min-width: 40px;   
+    height: 40px;    
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.2rem; /* Add some padding if numbers are too close to edge */
+    padding: 0.2rem; 
 }
 
 .process-step-header h3 {
@@ -527,14 +507,13 @@ footer .container {
 }
 
 /* Specific styling for the Social Media links/icons */
-.footer-column.social-media h4 { /* This class isn't in your provided HTML footer, but if you add it */
+.footer-column.social-media h4 {  
     margin-bottom: 1.2rem;
 }
 
 .social-link { /* Assuming this class is on the <a> tag for social links */
     display: inline-flex;
     align-items: center;
-    /* color: #ffffff; */ /* This will be inherited or can be set explicitly */
     font-size: 1rem; /* Adjusted from 1.2rem to be more harmonious with other p text */
     /* padding: 0.2rem 0; */ /* Might not be needed if vertical alignment is good */
 }
@@ -548,7 +527,6 @@ footer .container {
     width: 22px;  /* Adjusted from 28px for better balance with 1rem font-size */
     height: 22px;
     fill: currentColor;
-    /* margin-right: 0.5rem; */ /* Add if you have text next to the icon */
 }
 
 .footer-bottom {
@@ -576,15 +554,13 @@ footer .container {
         margin-bottom: 2rem;
     }
 
-    .footer-column:last-child { /* Ensure the last column doesn't have extra margin if it's the only one */
+    .footer-column:last-child {         
         margin-bottom: 0;
     }
 
-    /* .footer-column h4 { } */ /* No specific changes needed unless desired */
-
+    
     .footer-bottom {
         text-align: center;
     }
 }
 
-/* #logo img styles were moved to the header section for better organization */
