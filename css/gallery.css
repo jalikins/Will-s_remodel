@@ -1,42 +1,157 @@
-/* --- Gallery Grid System Styles --- */
-/* This can be used for any gallery on your site, including the main one
-   and the ones on your project detail pages. */
+/* --- Gallery Page Styles (Updated to match 'Our Projects' style) --- */
+
+/* --- Page Header & Filters (Kept from your previous version) --- */
+
+#full_gallery_page h2 {
+    /* Uses .page-section h2 styles, can be customized if needed */
+    margin-bottom: 1rem; /* Closer to intro paragraph */
+}
+
+
+.service_header h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #121d35;
+    margin-bottom: 3rem;
+}
+
+.gallery_page_header {
+    background-color: #ffffff;
+    padding: 3rem 0;
+}
+
+.service_header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem auto; /* Center it and add space below */
+    font-family: Arial, sans-serif; /* Fallback if 'Roboto' or other preferred font isn't available */
+    line-height: 1.6;
+    color: #121d35;
+}
+
+.service_intro_description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem auto; /* Center it and add space below */
+    font-size: 1.05rem;
+    color: #555e6d;
+    line-height: 1.7;
+}
+
+
+.gallery_header_actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.gallery_header_actions .cta_button,
+.gallery_header_actions .secondary_button {
+    /* ... button styles are kept the same ... */
+    padding: 0.75rem 1.75rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: inline-block;
+}
+.gallery_header_actions .cta_button {
+    background-color: #180060;
+    color: #ffffff;
+    border-color: #180060;
+}
+.gallery_header_actions .cta_button:hover {
+    background-color: #2a00b5;
+    border-color: #2a00b5;
+    transform: translateY(-2px);
+}
+.gallery_header_actions .secondary_button {
+    background-color: transparent;
+    color: #180060;
+    border-color: #180060;
+}
+.gallery_header_actions .secondary_button:hover {
+    background-color: #180060;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+#gallery_filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 3rem 0;
+}
+
+.filter_btn {
+    /* ... filter button styles are kept the same ... */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    background-color: #ffffff;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.filter_btn:hover {
+    background-color: #f0f0f0;
+    border-color: #180060;
+    color: #180060;
+}
+.filter_btn.active {
+    background-color: #180060;
+    color: #ffffff;
+    border-color: #180060;
+}
+
+
+/* ======================================================= */
+/* --- Main Gallery Grid (NEW STYLES) --- */
+/* ======================================================= */
+
+/* This section is now adapted from your our_projects.css file */
 
 .gallery_grid {
-    display: grid; /* 1. Establishes the grid layout */
-
-    /* 2. Defines the columns. This is the key to making it responsive. */
-    /* - auto-fit: Creates as many columns as will fit in the available space. */
-    /* - minmax(280px, 1fr): Each column will be a minimum of 280px wide. If there's
-       extra space, all columns will share it equally (1fr). */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-    gap: 1.5rem; /* 3. Sets the space between the images */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* From projects page */
+    gap: 2.5rem; /* From projects page */
+    padding-bottom: 2rem;; /* Space below the grid */
 }
 
-/* Style for the image container (the 'a' tag) if needed */
-.gallery_grid a {
-    display: block; /* Ensures the image styles below work correctly */
-    text-decoration: none;
-    border-radius: 8px; /* Match image radius for hover effects */
-    overflow: hidden; /* Keeps image inside the rounded corners */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+/* We are styling the <a> tag to act like the 'project-card' */
+.gallery_grid > a {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    overflow: hidden; /* Important! Ensures image corners are rounded */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* The anchor tag will be the grid item */
+    text-decoration: none;
 }
 
-.gallery_grid a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+/* Applying the hover effect from the project card to the gallery link */
+.gallery_grid > a:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Styling for the actual images inside the grid */
+/* Applying the image styling from the project card */
 .gallery_grid img {
-    width: 100%; /* Makes the image fill the width of its grid cell */
-    height: auto;
-    display: block; /* Removes extra space that can sometimes appear below images */
-    
-    /* This creates a consistent size for all images, preventing jagged rows.
-       It will crop the image to fit, which is usually desired in a uniform grid. */
-    aspect-ratio: 4 / 3; /* Common aspect ratio. Use 1/1 for square, 16/9 for wide. */
-    object-fit: cover;   /* This is what makes the image fill the aspect-ratio box without stretching. */
+    width: 100%;
+    height: 240px;      /* Fixed height for a uniform look */
+    object-fit: cover;  /* This prevents images from stretching or squishing */
+    display: block;
 }
+
+
