@@ -1,7 +1,9 @@
-/* --- About Page Specific Styles --- */
+/* =================================================================== */
+/* ABOUT PAGE-SPECIFIC STYLES                                        */
+/* =================================================================== */
+
 #about-page {
-    background-color: #ffffff; /* Light background for the entire section */
-    padding: 4rem 1.5rem; /* Keep the page section padding */
+    background-color: #ffffff; 
 }
 
 #about-page h2 {
@@ -11,6 +13,7 @@
     font-weight: 700;
     color: #121d35;
     margin-bottom: 2.5rem;
+    /* This h2 is slightly different from the global one, so it's fine to keep it specific here */
 }
 
 .about-layout {
@@ -18,10 +21,10 @@
     flex-wrap: wrap;
     gap: 3rem;
     align-items: flex-start;
-    background-color: #ffffff; /* White background for the box */
-    border-radius: 12px;       /* Rounded corners for the box */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for the box */
-    padding: 3rem;            /* Padding inside the box */
+    background-color: #ffffff; 
+    border-radius: 12px;       
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    padding: 3rem;            
 }
 
 .about-text {
@@ -35,10 +38,6 @@
     line-height: 1.8;
     color: #454545;
     margin-bottom: 1.5rem;
-}
-
-.about-text p:last-child {
-    margin-bottom: 0;
 }
 
 .about-image {
@@ -63,22 +62,10 @@
     color: #6c757d;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .about-layout {
         flex-direction: column-reverse;
         align-items: center;
-        padding: 2rem; /* Adjust padding for smaller screens */
-    }
-
-    .about-text {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .about-image {
-        width: 100%;
-        max-width: 400px;
-        margin-bottom: 2rem;
+        padding: 2rem; 
     }
 }

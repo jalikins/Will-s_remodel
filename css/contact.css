@@ -1,17 +1,11 @@
-/* --- Contact Page Specific Styles --- */
-#contact-page {
-    background-color: #ffffff; /* Light background for the section */
-}
+/* =================================================================== */
+/* CONTACT PAGE-SPECIFIC STYLES                                      */
+/* =================================================================== */
 
-#contact-page h2 {
-    /* Uses .page-section h2 styles */
-    margin-bottom: 1rem;
-}
-
-#contact-page .section-intro {
+#contact .section-intro {
     text-align: center;
     max-width: 650px;
-    margin: 0 auto 3rem auto;
+    margin: 0rem auto 3rem auto; /* Adjusted margin to account for heading */
     font-size: 1.05rem;
     color: #555e6d;
 }
@@ -40,63 +34,14 @@
 .contact-details-container h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.6rem;
-    color: #121d35;
+    color: var(--primary_blue);
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #180060; 
+    border-bottom: 2px solid var(--orange_accent); 
     display: inline-block;
 }
 
-/* Form Styling */
-.form-group {
-    margin-bottom: 1.25rem;
-}
-
-.form-group label {
-    display: block;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color: #495057;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group input[type="tel"]:focus,
-.form-group textarea:focus {
-    border-color: #180060; 
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(24, 0, 96, 0.25); 
-}
-
-.form-group textarea {
-    resize: vertical; 
-    min-height: 120px;
-}
-
-.form-submit-button { /* Reuses .cta-button styles */
-    
-    
-    padding: 0.8rem 2rem; /* Slightly adjusted padding */
-    cursor: pointer;
-}
-
-/* Contact Details Styling */
+/* Contact Details Specific Styling */
 .contact-details-item {
     margin-bottom: 1.5rem;
     line-height: 1.7;
@@ -117,7 +62,7 @@
 }
 
 .contact-details-item a {
-    color: #180060; 
+    color: var(--primary_blue); 
     text-decoration: none;
 }
 
@@ -125,7 +70,7 @@
     text-decoration: underline;
 }
 
-
+/* Responsive adjustment */
 @media (max-width: 820px) { 
     .contact-layout {
         flex-direction: column; 

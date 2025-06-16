@@ -1,95 +1,15 @@
+/* --- Gallery Page: Unique Styles --- */
 
-
-#full_gallery_page h2 {
-    margin-bottom: 1rem; /* Closer to intro paragraph */
-}
-
-
-.service_header h1 {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: #121d35;
-    margin-bottom: 3rem;
-}
-
-.gallery_page_header {
-    background-color: #ffffff;
-    padding: 3rem 0;
-}
-
-.service_header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 3rem auto; 
-    font-family: Arial, sans-serif; 
-    line-height: 1.6;
-    color: #121d35;
-}
-
-.service_intro_description {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 3rem auto; 
-    font-size: 1.05rem;
-    color: #555e6d;
-    line-height: 1.7;
-}
-
-
-.gallery_header_actions {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.gallery_header_actions .cta_button,
-.gallery_header_actions .secondary_button {
-    
-    padding: 0.75rem 1.75rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    display: inline-block;
-}
-.gallery_header_actions .cta_button {
-    background-color: #180060;
-    color: #ffffff;
-    border-color: #180060;
-}
-.gallery_header_actions .cta_button:hover {
-    background-color: #2a00b5;
-    border-color: #2a00b5;
-    transform: translateY(-2px);
-}
-.gallery_header_actions .secondary_button {
-    background-color: transparent;
-    color: #180060;
-    border-color: #180060;
-}
-.gallery_header_actions .secondary_button:hover {
-    background-color: #180060;
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
+/* Filter Buttons */
 #gallery_filters {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.8rem;
-    margin: 3rem 0;
+    margin-bottom: 3rem;
 }
 
 .filter_btn {
-    /* ... filter button styles are kept the same ... */
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1rem;
@@ -103,110 +23,55 @@
 }
 .filter_btn:hover {
     background-color: #f0f0f0;
-    border-color: #180060;
-    color: #180060;
+    border-color: var(--primary_blue);
+    color: var(--primary_blue);
 }
 .filter_btn.active {
-    background-color: #180060;
+    background-color: var(--primary_blue);
     color: #ffffff;
-    border-color: #180060;
+    border-color: var(--primary_blue);
 }
 
-
-
-/* --- Main Gallery Grid (NEW STYLES) --- */
-
-
-
-
-.gallery_grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 2.5rem; 
-    padding-bottom: 2rem;; 
-}
-
-
-.gallery_grid > a {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-    overflow: hidden; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: block; 
-    text-decoration: none;
-}
-
-/* Applying the hover effect from the project card to the gallery link */
-.gallery_grid > a:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
-
-
-.gallery_grid img {
-    width: 100%;
-    height: 240px;      
-    object-fit: cover;  
-    display: block;
-}
-
-
-/* --- Gallery Description Box Styles --- */
-
+/* Dynamic Description Box */
 #gallery_description_box {
     background-color: #ffffff;
-    border-left: 5px solid #b58a40; 
+    border-left: 5px solid var(--orange_accent); 
     box-shadow: 0 4px 15px rgba(0,0,0,0.06);
     border-radius: 0 8px 8px 0;
     padding: 1.5rem 2rem;
     margin: -1.5rem 0 3rem 0; 
     text-align: center;
-
-    /* --- For the smooth reveal animation --- */
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
 }
-
 #gallery_description_box.active {
     max-height: 500px; 
     opacity: 1;
-    padding-top: 1.5rem; 
-    padding-bottom: 1.5rem;
 }
-
 .gallery_description_title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;
-    font-weight: 700;
-    color: #121d35;
+    color: var(--primary_blue);
     margin-bottom: 0.75rem;
 }
-
 .gallery_description_text {
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
     line-height: 1.7;
     color: #555e6d;
     max-width: 700px;
     margin: 0 auto;
 }
 
-/* --- Style for the Dynamic "Now Viewing" Header --- */
-
+/* "Now Viewing" Header */
 #gallery_current_filter_header {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
     color: #555e6d;
     margin-bottom: 2rem;
-    font-size: 1.1rem;
     border-top: 1px solid #eee;
     padding-top: 2rem;
 }
-
 #gallery_current_filter_header strong {
-    font-weight: 700;
-    color: #121d35;
+    color: var(--primary_blue);
 }

@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             galleryItem.href = image.largeSrc;
             galleryItem.setAttribute('data-lightbox', filterCategory);
             galleryItem.setAttribute('data-title', image.alt);
-
+            galleryItem.classList.add('item-card')
             const imgElement = document.createElement('img');
             imgElement.src = image.src;
             imgElement.alt = image.alt;
