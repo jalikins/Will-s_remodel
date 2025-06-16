@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Will's Remodeling LLC</title>
+   <title>Contact Will's Remodeling LLC | Get a Free Quote | Lake Keowee and Seneca</title>
+   <meta name="description" content="Ready to start your remodeling project in the Lake Keowee or Seneca, SC area? Contact Will's Remodeling today for a free, no-obligation quote. Call or fill out our form.">
+   <link rel="icon" href="../images/logos/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../images/logos/apple-touch-icon.png">
+    <link rel="canonical" href="https://www.WillsKeoweeRemodeling.com/pages/contact.html" />
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/contact.css">
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.WillsKeoweeRemodeling.com/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact Will's Remodeling",
+            "item": "https://www.WillsKeoweeRemodeling.com/pages/contact.html"
+        }]
+        }
+    </script>
     </head>
 <body>
     <header>
         <div class="container"> 
-            <a href="../index.html" id="logo"><img src="../images/logos/long_will_logo.webp"></a>
+            <a href="../index.html" id="logo"><img src="../images/logos/long_will_logo.webp" alt="Will's Remodeling LLC Logo"></a>
+
+            <button class="mobile_nav_toggle" aria-controls="primary_navigation" aria-expanded="false">
+                <span class="sr_only">Menu</span>
+            </button>
+
             <nav>
-                <ul>
-                    <li><a href="about.html">About</a></li> 
+                <ul id="primary_navigation" class="primary_navigation" data-visible="false">
+                    <li><a href="about.html">About Us</a></li> 
                     <li><a href="our_projects.html">Our Projects</a></li>
+                    <li><a href="gallery.html">The Gallery</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
@@ -22,15 +49,15 @@
     </header>
 
     <main>
-        <section id="contact-page" class="page-section">
+        <section id="contact-page" class="page_section">
             <div class="container">
-                <h2>Get In Touch With Us</h2>
+                <h1>Get In Touch With Us</h1>
                 <p class="section-intro">We'd love to hear about your remodeling ideas! Fill out the form below or reach out to us directly.</p>
 
                 <div class="contact-layout">
                     <div class="contact-form-container">
                         <h3>Send Us a Message</h3>
-                        <form id="contactForm" action="#" method="POST">
+                        <form id="contactForm" action="https://formsubmit.co/jalikins05@gmail.com" method="POST">
                             <div class="form-group">
                                 <label for="name">Full Name:</label>
                                 <input type="text" id="name" name="name" required>
@@ -71,8 +98,13 @@
                         </div>
                         <div class="contact-details-item">
                             <strong>Service Area:</strong>
-                            <p><a href="#">Lake Keowee Area & Surroundings</a></p>
-                            </div>
+                            <p>Lake Keowee Area & Surroundings, South Carolina</p>
+                        </div>
+
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104800.6510816674!2d-83.0043080627701!3d34.83058095527613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885855e002823ee7%3A0x9af5cc9f585b432!2sLake%20Keowee!5e0!3m2!1sen!2sus!4v1749514608097!5m2!1sen!2sus" width="100%" height="350" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,7 +133,7 @@
                 </div>
                 <div class="footer-column Company-Info">
                     <h4>Info</h4>
-                    <p><strong>Location:</strong> Lake Keowee Area & Surroundings</p>
+                    <p><strong>Location:</strong> Lake Keowee Area & Surroundings, SC</p>
                     <p><strong>Hours:</strong> Monday - Friday, 7:00 AM - 6:00 PM</p>
                 </div>
             </div>
@@ -111,6 +143,6 @@
         </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script src="../js/mobil.js"></script>
 </body>
 </html>

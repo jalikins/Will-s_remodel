@@ -1,3 +1,12 @@
+
+
+:root {
+  --header_backround: #F2F2F2;
+  --white: #faf0e6;
+  --primary_blue: #16233f;
+  --orange_accent: #b58a40;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +14,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif; /* Fallback if 'Roboto' or other preferred font isn't available */
+    font-family: Arial, sans-serif; 
     line-height: 1.6;
     color: #121d35;
 }
@@ -19,35 +28,26 @@ body {
 
 /* --- Header Styling --- */
 header {
-    background-color: #F2F2F2;
+    background-color: var(--header_backround);
     padding: .5rem 0;
-    border-bottom: 1px solid #ddd; /* Changed .5px to 1px, as .5px might not render consistently */
+    border-bottom: 1px solid #ddd; 
 }
 
-/* SUGGESTION: Use Flexbox for better alignment of logo and nav */
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Remove width, max-width, margin, padding from here if defined globally for .container,
-       or keep if this container needs specific sizing.
-       The global .container styles will apply padding.
-    */
-}
+   }
 
 header #logo {
-    /* float: left; */ /* REMOVE if using Flexbox on parent .container */
-    text-decoration: none; /* Kept if logo is a text link, not needed for img directly */
-    /* Styles below are for a text logo, your #logo img rule handles the image */
-    /* font-size: 1.5rem; */
-    /* color: #333; */
-    /* font-weight: bold; */
+    
+    text-decoration: none; 
 }
 
-#logo img { /* Moved this up to be with other header styles */
-    height: 120px;  /* Reduced from 100px for potentially better header proportions */
-    width: auto;   /* Let width adjust based on new height to maintain aspect ratio */
-    display: block; /* Good for images */
+#logo img { 
+    height: 120px;   
+    width: auto;   
+    display: block; 
 }
 
 
@@ -100,24 +100,30 @@ header nav ul li a.active {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-family: 'Montserrat', sans-serif; 
+ 
+}
+.box1 {
+  background-color: rgb(0 0 0 / 0.1);
+  color: #fff;
 }
 
 #hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     font-family: 'Roboto', sans-serif; 
+
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #16233f;
+    background-color: var(--primary_blue);
     color: #fff;
     padding: 12px 25px; 
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.1rem;
     font-family: 'Montserrat', sans-serif; 
-    font-weight: 600; /* Added weight */
+    font-weight: 600; 
     transition: background-color 0.3s ease;
 }
 
@@ -127,18 +133,64 @@ header nav ul li a.active {
 
 
 /* --- General Page Section Styling --- */
-.page-section {
+.page_section {
     padding: 4rem 1.5rem;
 }
 
-.page-section h2 {
-    text-align: center;
+/* --- NEW: Improved Styles for All Section Headings --- */
+.page_section h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.4rem;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--primary_blue);
+    text-align: center;
+
+    letter-spacing: 1.5px;
+    margin-bottom: 4rem; 
+    position: relative;
+    padding-bottom: 1.5rem; /
+}
+
+/* This creates the decorative accent line below the heading */
+.page_section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    width: 70px;
+    height: 4px;
+    background-color: #b58a40; 
+    border-radius: 2px;
+}
+.page_section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.6rem;
     font-weight: 700;
     color: #121d35;
-    margin-bottom: 3rem;
+    text-align: center;
+
+    letter-spacing: 1.5px;
+    margin-bottom: 4rem; 
+    position: relative;
+    padding-bottom: 1.5rem; 
 }
+
+/* This creates the decorative accent line below the heading */
+.page_section h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    width: 70px;
+    height: 4px;
+    background-color: #b58a40; 
+    border-radius: 2px;
+}
+
 
 /* --- Services Overview Section --- */
 #services-overview {
@@ -201,7 +253,7 @@ header nav ul li a.active {
 
 .learn-more-link {
     display: inline-block;
-    background-color: #16233f;
+    background-color: var(--primary_blue);
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -222,34 +274,33 @@ header nav ul li a.active {
 /* --- Remodeling Process Section (NEW TIMELINE DESIGN) --- */
 
 #remodeling_process {
-    background-color: #f8f9fa; /* Light background to make it a feature section */
-    overflow: hidden; /* Prevents arrows from sticking out on mobile */
+    background-color: #f8f9fa; 
+    overflow: hidden; 
 }
 
 .process_timeline {
-    display: flex; /* This creates the horizontal layout */
-    justify-content: space-between; /* Distributes space between the steps */
+    display: flex; 
+    justify-content: space-between; 
     position: relative;
 }
 
 .process_step {
-    flex: 1; /* Each step will take up equal space */
+    flex: 1; 
     text-align: center;
     padding: 1.5rem;
-    position: relative; /* Needed for the arrow pseudo-element */
-    /* Add a max-width to prevent text from getting too wide if you have few steps */
+    position: relative; 
     max-width: 280px;
-    isolation: isolate; /* <<< ADD THIS LINE */
+    isolation: isolate; 
 }
 
 /* Style for the step icon/number */
 .step_icon {
     width: 80px;
     height: 80px;
-    margin: 0 auto 1.5rem auto; /* Center the circle above the text */
+    margin: 0 auto 1.5rem auto; 
     background-color: #ffffff;
-    border: 3px solid #16233f; /* Your dark blue color */
-    border-radius: 50%; /* Makes it a perfect circle */
+    border: 3px solid var(--primary_blue); 
+    border-radius: 50%; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -258,8 +309,8 @@ header nav ul li a.active {
 }
 
 .process_step:hover .step_icon {
-    background-color: #16233f;
-    border-color: #b58a40; /* Your gold accent color */
+    background-color: var(--primary_blue,#16233f);
+    border-color: #b58a40; 
     transform: scale(1.1) rotate(10deg);
 }
 
@@ -267,7 +318,7 @@ header nav ul li a.active {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #16233f;
+    color: var(--primary_blue);
     transition: color 0.3s ease;
 }
 
@@ -293,26 +344,24 @@ header nav ul li a.active {
 }
 
 /* --- The Connecting Arrows (The Creative Part) --- */
-/* We use a pseudo-element to draw an arrow after each step, except the last one */
+
 .process_step:not(:last-child)::after {
     content: '';
     position: absolute;
-    top: 40px; /* Vertically center with the middle of the icon */
+    top: 40px; 
     right: 0;
-    /* Move the arrow halfway into the space between cards */
     transform: translateX(50%);
-    width: 40px; /* Width of the arrow graphic */
-    height: 40px; /* Height of the arrow graphic */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23cccccc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E");
+    width: 40px; 
+    height: 40px; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23b58a40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E");
     background-size: contain;
     background-repeat: no-repeat;
-    z-index: -1; /* Place it behind the next step's icon if they overlap */
+    z-index: -1; 
 }
 
 /* --- Responsive Adjustments for the Timeline --- */
 
 @media (max-width: 992px) {
-    /* On smaller tablets, make the arrows smaller */
     .process_step:not(:last-child)::after {
         width: 30px;
         height: 30px;
@@ -320,11 +369,10 @@ header nav ul li a.active {
 }
 
 @media (max-width: 768px) {
-    /* On mobile, stack the steps vertically */
     .process_timeline {
         flex-direction: column;
-        align-items: center; /* Center the stacked items */
-        gap: 2rem; /* Add space between stacked items */
+        align-items: center; 
+        gap: 2rem; 
     }
 
     /* Hide the connecting arrows on mobile */
@@ -333,161 +381,131 @@ header nav ul li a.active {
     }
 
     .process_step {
-        /* Allow steps to be a bit wider on mobile */
+        
         max-width: 400px;
     }
 }
 
 
-/* Responsive adjustments for process grid */
-/* The 'auto-fit' for .process-grid above might make these media queries for column counts redundant.
-   Test it. If auto-fit works well, you might only need media queries for 'gap' or other specific adjustments.
-*/
-/*
-@media (min-width: 768px) {
-    .process-grid {
-        // grid-template-columns: repeat(2, 1fr); // Potentially redundant if using auto-fit
-    }
+
+/* --- Customer Reviews Section (Carousel Version) --- */
+#customer_reviews {
+    background-color: #f8f9fa;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
 }
 
-@media (min-width: 992px) {
-    .process-grid {
-        // grid-template-columns: repeat(3, 1fr); // Or keep at 2, depending on auto-fit behavior and content
-    }
-}
-*/
-
-/* FIX: CONFLICTING MEDIA QUERIES.
-   You have TWO @media (min-width: 768px) blocks trying to style .process-grid differently.
-   The second one (timeline styles) will override the first one if both are uncommented.
-   You need to CHOOSE ONE approach for screens >= 768px or merge them logically.
-   I am commenting out the timeline one for now, assuming the grid is preferred.
-*/
-/*
-@media (min-width: 768px) { // This is the TIMELINE styling for >= 768px
-    .process-grid {
-        grid-template-columns: 1fr; // Single column for timeline
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .process-step {
-        position: relative;
-        margin-left: 30px;
-        padding-left: 2.5rem;
-    }
-    .process-step::before { // Timeline dot
-        content: '';
-        position: absolute;
-        left: -8px;
-        top: calc(1.8rem + 10px);
-        width: 16px;
-        height: 16px;
-        background-color: #180060;
-        border-radius: 50%;
-        border: 3px solid #fff;
-        z-index: 1;
-    }
-    .process-step::after { // Timeline line
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background-color: #e0e0e0;
-        z-index: 0;
-    }
-    .process-grid .process-step:first-child::after { top: calc(1.8rem + 10px); }
-    .process-grid .process-step:last-child::after { bottom: auto; height: calc(1.8rem + 10px); }
-
-    .step-number { display: none; } // Hide text number if using dot visual for timeline
-    .process-step-header { margin-bottom: 0.5rem; }
-}
-*/
-
-
-/* --- Customer Reviews Section --- */
-#customer-reviews {
-    background-color: #f8f9fa; /* Or a very light, clean background */
-    /* padding: 4rem 1.5rem; /* From .page-section */
+#customer_reviews h2 {
 }
 
-#customer-reviews h2 {
-    /* Uses .page-section h2 styles */
-    /* text-align: center; */
-    /* font-family: 'Montserrat', sans-serif; */
-    /* font-size: 2.4rem; */
-    /* font-weight: 700; */
-    /* color: #121d35; */
-    /* margin-bottom: 3rem; */
+.reviews_grid {
+    margin: 0 -15px;
 }
 
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for reviews */
-    gap: 2.5rem;
-}
-
-.review-card {
-    background-color: #f8f9fa; /* Light background for the card itself */
+/* This styles each individual review card. */
+.review_card {
+    background-color: #ffffff;
     border: 1px solid #e9ecef;
-    padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+    
+    margin: 0 15px;
+
+    /* --- FIX FOR EQUAL HEIGHTS --- */
+    height: 100%;
     display: flex;
     flex-direction: column;
-    /* text-align: center; */ /* Uncomment if you want all text in card centered */
+
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.review-stars {
+.review_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+.review_stars {
+    text-align: center;
     font-size: 1.3rem;
-    color: #ffc107; /* Gold color for stars */
+    color: #ffc107;
     margin-bottom: 1rem;
-    text-align: center; /* Center the stars */
 }
 
-.review-text {
-    font-family: 'Roboto', sans-serif; /* Or your preferred quote font, Georgia can be nice too */
+.review_text {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
     font-size: 1rem;
     line-height: 1.7;
     color: #495057;
     margin-bottom: 1.5rem;
-    font-style: italic;
-    border-left: 4px solid #b58a40; /* Accent color quote line */
+    border-left: 4px solid #b58a40;
     padding-left: 1rem;
-    flex-grow: 1; /* Allows text to take space if names are short */
+    flex-grow: 1; 
 }
 
-.review-text p {
-    margin: 0; /* Remove default p margin if p is inside blockquote */
+.review_text p {
+    margin: 0;
 }
 
-.reviewer-name {
+.reviewer_name {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #121d35;
     font-size: 1rem;
+    text-align: right;
     margin-bottom: 0.25rem;
-    text-align: right; /* Align name to the right */
 }
 
-.review-project-type {
+.review_project_type {
     font-family: 'Roboto', sans-serif;
     font-size: 0.85rem;
-    color: #6c757d; /* Muted color */
-    text-align: right; /* Align project type to the right */
+    color: #6c757d;
+    text-align: right;
     font-style: italic;
 }
 
-/* Responsive adjustments if needed - the auto-fit grid should handle most cases */
-@media (max-width: 768px) {
-    .review-card {
-        text-align: left;  /* Or keep centered for mobile */
-    }
-    .reviewer-name, .review-project-type {
-        /* text-align: center; */ /* Or keep right for mobile */
-    }
+
+/* --- Styles for Slick Carousel Arrows --- */
+.slick-prev, 
+.slick-next {
+    width: 45px;
+    height: 45px;
+    z-index: 10;
+    background-color: rgba(22, 35, 63, 0.6);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.slick-prev:hover, 
+.slick-next:hover {
+    background-color: #121d35;
+}
+
+/* Position the arrows outside the main content area */
+.slick-prev { left: -25px; 
+color: red;}
+.slick-next { right: -25px; }
+
+
+/* --- FIX FOR ARROW COLOR --- */
+.slick-prev:before {
+  content: "<";
+  color: red;
+  font-size: 30px;
+}
+
+.slick-next:before {
+  content: ">";
+  color: red;
+  font-size: 30px;
+}
+
+.slick-prev:hover::before,
+.slick-next:hover::before {
+    opacity: 1;
 }
 
 
@@ -527,14 +545,12 @@ footer .container {
     color: #ffffff;
     margin-bottom: 1rem;
     padding-bottom: 0.75rem;
-    /* ACCENT COLOR: Using #b58a40 here. Ensure this is intentional vs #ffa500 or #180060 */
     border-bottom: 2px solid #b58a40;
 }
 
 .footer-column.about-us-footer p {
     color: #ddd;
     font-style: italic;
-    /* align-items: center; */ /* REMOVE: This is a flex container property */
 }
 
 .footer-column.contact-info p {
@@ -547,7 +563,6 @@ footer .container {
 }
 
 .footer-column a {
-    /* ACCENT COLOR: Using #b58a40 here. */
     color: #b58a40;
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
@@ -558,25 +573,23 @@ footer .container {
     text-decoration: underline;
 }
 
-/* Specific styling for the Social Media links/icons */
+
 .footer-column.social-media h4 {  
     margin-bottom: 1.2rem;
 }
 
-.social-link { /* Assuming this class is on the <a> tag for social links */
+.social-link { 
     display: inline-flex;
     align-items: center;
-    font-size: 1rem; /* Adjusted from 1.2rem to be more harmonious with other p text */
-    /* padding: 0.2rem 0; */ /* Might not be needed if vertical alignment is good */
+    font-size: 1rem; 
 }
 
 .social-link:hover {
-    /* ACCENT COLOR: Using #ffa500 here. Consider unifying accent colors. */
     color: #ffa500;
 }
 
 .social-link svg {
-    width: 22px;  /* Adjusted from 28px for better balance with 1rem font-size */
+    width: 22px;  
     height: 22px;
     fill: currentColor;
 }
@@ -614,5 +627,300 @@ footer .container {
     .footer-bottom {
         text-align: center;
     }
+}
+
+
+.cta_button,
+.secondary_button {
+    /* ... button styles are kept the same ... */
+    padding: 0.75rem 1.75rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: inline-block;
+}
+.cta_button {
+    background-color: var(--primary_blue);
+    color: #ffffff;
+    border-color: var(--primary_blue);
+}
+.cta_button:hover {
+    background-color: #2a00b5;
+    border-color: #2a00b5;
+    transform: translateY(-2px);
+}
+.secondary_button {
+    background-color: transparent;
+    color: var(--primary_blue);
+    border-color: var(--primary_blue);
+}
+.secondary_button:hover {
+    background-color: var(--primary_blue);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* --- Mobile Navigation Styles --- */
+
+.mobile_nav_toggle {
+    display: none; /* Hidden on desktop by default */
+}
+
+/* This is the media query that controls ALL mobile styles */
+@media (max-width: 768px) { 
+    /* Style the slide-out navigation panel */
+    .primary_navigation {
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+        
+        list-style: none;
+        padding: min(20vh, 10rem) 2rem;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem); /* For Safari support */
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    .primary_navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    /* Style the navigation links FOR THE MOBILE MENU */
+    header nav ul li a {
+        color: var(--primary_blue);
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    /* Hamburger Icon Styles */
+    .mobile_nav_toggle {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        top: 2rem;
+        right: 2rem;
+        width: 2rem;
+        aspect-ratio: 1;
+        background: transparent;
+        border: 0;
+        padding: 0;
+    }
+
+    .mobile_nav_toggle::before,
+    .mobile_nav_toggle::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--primary_blue);
+        border-radius: 2px;
+        transition: transform 350ms ease-out;
+    }
+    .mobile_nav_toggle::before {
+        top: 25%;
+    }
+    .mobile_nav_toggle::after {
+        bottom: 25%;
+    }
+
+    /* Animate hamburger to an 'X' when menu is open */
+    .mobile_nav_toggle[aria-expanded="true"]::before {
+        transform: translateY(5.5px) rotate(45deg);
+    }
+    .mobile_nav_toggle[aria-expanded="true"]::after {
+        transform: translateY(-5.5px) rotate(-45deg);
+    }
+}
+
+/*  NEW STYLES: This block fixes the desktop view   */
+
+
+
+@media (min-width: 769px) {
+    
+    .primary_navigation {
+        display: flex; 
+        gap: 15px;     
+    }
+
+    header nav ul li {
+        display: block;  
+        margin-left: 0; 
+    }
+    
+    
+    header nav ul li a {
+        text-decoration: none;
+        color: #333333;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        font-size: 1.5rem;
+        padding: 0.3rem 0.5rem;
+        border-radius: 3px;
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+}
+
+/* --- Thank You Page Styles --- */
+
+#thank_you_page {
+    background-color: #f8f9fa; /* A light, clean background */
+    display: flex;
+    align-items: center;
+    min-height: 60vh; /* Ensures the content is roughly centered vertically */
+}
+
+.thank_you_box {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto; /* Centers the box horizontally */
+}
+
+.thank_you_icon svg {
+    color: #28a745; /* A success green color */
+    margin-bottom: 1rem;
+}
+
+.thank_you_box h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #121d35;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.thank_you_box p {
+    font-family: 'Roboto', sans-serif;
+    color: #555e6d;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+
+/* --- Why Choose Us Section --- */
+#why_choose_us {
+    background-color: #f8f9fa; /* A clean white background to contrast other sections */
+}
+
+.why_choose_us_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.benefit_item {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border: 1px solid #ffffff; 
+    border-radius: 10px;
+    background-color: #ffffff; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit_item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.benefit_icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem auto; 
+    background-color: var(--primary_blue); 
+    color: #ffffff; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit_icon svg {
+    stroke-width: 1.5; /* Makes the icon lines a bit thinner and more elegant */
+}
+
+.benefit_item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #121d35;
+    margin-bottom: 0.75rem;
+}
+
+.benefit_item p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #555e6d;
+    line-height: 1.6;
+}
+
+/* --- Final CTA Section --- */
+#final_cta {
+    background-color: var(--primary_blue); 
+    color: #ffffff;
+    text-align: center; 
+}
+
+#final_cta h2 {
+    color: #ffffff; 
+    position: relative; 
+    padding-bottom: 1.5rem; 
+}
+
+#final_cta h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background-color: #b58a40; 
+    border-radius: 2px;
+}
+
+#final_cta p {
+    max-width: 600px;
+    margin: 1.5rem auto 2.5rem auto; 
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+#final_cta .cta_button {
+    background-color: #b58a40; 
+    color: #121d35; 
+    border-color: #b58a40; 
+    font-weight: 700; 
+    padding: 1rem 2rem; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#final_cta .cta_button:hover {
+    background-color: #ffffff; 
+    border-color: #ffffff;
+    transform: translateY(-3px) scale(1.05); 
+}
+
+/* Container for the link at the top of the page */
+.back_to_top {
+    margin-top: 1.2rem;
+    text-align: center;
+    
 }
 

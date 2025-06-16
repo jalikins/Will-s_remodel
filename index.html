@@ -3,16 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will's Remodeling LLC - Quality Home Renovations</title> <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Expert home remodeling and renovation services at Lake Keowee, SC area. Will's Remodeling LLC specializes in kitchens, bathrooms, additions, and more. Get a free quote!">
+    <title>Lake Keowee Home Remodeling & Renovations | Will's Remodeling LLC</title>
+    <link rel="icon" href="images/logos/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="images/logos/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="canonical" href="https://www.WillsKeoweeRemodeling.com/" />
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Will's Remodeling LLC",
+        "image": "https://www.WillsKeoweeRemodeling.com/images/logos/long_will_logo.webp",
+        "@id": "https://www.WillsKeoweeRemodeling.com/",
+        "url": "https://www.WillsKeoweeRemodeling.com/", 
+        "telephone": "+1-864-873-7533",
+        "priceRange": "$$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Main Street",
+            "addressLocality": "Seneca",
+            "addressRegion": "SC",
+            "postalCode": "29672",
+            "addressCountry": "US"
+        },
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "34.8532",  
+            "longitude": "-82.9557" 
+            },
+            "geoRadius": "32186" 
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "07:00",
+            "closes": "18:00"
+        },
+        "sameAs": "https://www.facebook.com/p/Wills-Remodeling-LLC-100064307043022"
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.WillsKeoweeRemodeling.com/"
+        }]
+        }
+    </script>
 </head>
 <body>
     <header>
         <div class="container"> 
-            <a href="index.html" id="logo"><img src="images/logos/long_will_logo.webp"></a>
+            <a href="index.html" id="logo"><img src="images/logos/long_will_logo.webp" alt="Will's Remodeling LLC Logo"></a>
+
+            <button class="mobile_nav_toggle" aria-controls="primary_navigation" aria-expanded="false">
+                <span class="sr_only">Menu</span>
+            </button>
+
             <nav>
-                <ul>
-                    <li><a href="pages/about.html">About</a></li> 
+                <ul id="primary_navigation" class="primary_navigation" data-visible="false">
+                    <li><a href="pages/about.html">About Us</a></li> 
                     <li><a href="pages/our_projects.html">Our Projects</a></li>
+                    <li><a href="pages/gallery.html">The Gallery</a></li>
                     <li><a href="pages/contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -22,40 +83,99 @@
     <main>
         <section id="hero">
             <div class="container"> 
-                <h1>Transforming Your House into a Dream Home</h1>
-                <p>Expert remodeling services tailored to your vision and budget.</p>
-                <a href="pages/contact.html" class="cta-button">Get a Free Quote</a>
+                <div class="box box1"><h1>Transforming Your House into a Dream Home</h1>
+                <p>Expert remodeling services in the Lake Keowee area, tailored to your vision and budget.</p></div>
+                <a href="pages/contact.html" class="cta_button">Get a Free Quote</a></div>
             </div>
         </section>
 
 
-        <section id="services-overview" class="page-section">
+        <section id="services-overview" class="page_section">
             <div class="container">
                 <h2>Our Core Services</h2>
                 <div class="services-grid">
                     <div class="service-item">
-                        <img src="images/front_page/front_page_kitchen.webp" alt="Kitchen Remodeling Images">
-                        <h3>Kitchen Remodeling</h3>
-                        <p>Transform your kitchen into a beautiful and functional space.</p>
-                        <a href="pages/services.html#kitchen" class="learn-more-link">Learn More</a>
+                        <img src="images/front_page/front_page_kitchen.webp" alt="A beautifully remodeled modern kitchen">
+                        <div class="service-item-content">
+                            <h3>Kitchen Remodeling</h3>
+                            <p>Transform your kitchen into the heart of your home, a space that's both beautiful and highly functional.</p>
+                            <a href="pages/gallery.html?filter=kitchen" class="learn-more-link">View Kitchens</a>
+                        </div>
                     </div>
                     <div class="service-item">
-                        <img src="images/front_page/front_bathroom.webp" alt="Bathroom Renovation Images">
-                        <h3>Bathroom Renovations</h3>
-                        <p>Create a spa-like retreat with our expert bathroom updates.</p>
-                        <a href="pages/gallery.html" class="learn-more-link">Learn More</a>
+                        <img src="images/front_page/front_bathroom.webp" alt="A luxurious spa-like bathroom renovation">
+                        <div class="service-item-content">
+                            <h3>Bathroom Renovations</h3>
+                            <p>Create a personal, spa-like retreat with our expert bathroom updates, from simple refreshes to complete overhauls.</p>
+                             <a href="pages/gallery.html?filter=bathroom" class="learn-more-link">View Bathrooms</a>
+                        </div>
                     </div>
                     <div class="service-item">
-                        <img src="images/front_page/front_addition.webp" alt="Home Additions Icon"> 
-                        <h3>Home Additions</h3>
-                        <p>Expand your living space with seamless home additions.</p>
-                        <a href="pages/services.html#additions" class="learn-more-link">Learn More</a>
+                        <img src="images/projects/beacon/living_room/new_living_room(1).webp" alt="A comfortable and stylish living room">
+                        <div class="service-item-content">
+                            <h3>Living Rooms</h3>
+                            <p>We redesign living spaces to enhance comfort and flow, creating the perfect setting for family gatherings and relaxation.</p>
+                             <a href="pages/gallery.html?filter=living_room" class="learn-more-link">View Living Rooms</a>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <img src="images/front_page/front_addition.webp" alt="A custom-built deck and outdoor patio area">
+                        <div class="service-item-content">
+                            <h3>Outdoor Spaces</h3>
+                            <p>Extend your living area to the outdoors. We design and build stunning decks, patios, and porches for entertaining.</p>
+                             <a href="pages/gallery.html?filter=outdoor" class="learn-more-link">View Outdoor Spaces</a>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <img src="images/front_page/front_addition.webp" alt="A seamless two-story home addition">
+                        <div class="service-item-content">
+                            <h3>Home Additions</h3>
+                            <p>Seamlessly add value and square footage to your home with a masterfully crafted addition designed for your growing needs.</p>
+                             <a href="pages/gallery.html?filter=misc" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <img src="images/front_page/front_addition.webp" alt="A finished basement used as an entertainment room">
+                        <div class="service-item-content">
+                            <h3>Plenty More</h3>
+                            <p>Have another project in mind? From basement finishing to custom carpentry, we handle a wide range of requests. Let's talk!</p>
+                             <a href="pages/gallery.html?filter=misc" class="learn-more-link">View More</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section> 
+        </section>
 
-         <section id="remodeling_process" class="page-section">
+        <section id="why_choose_us" class="page_section">
+            <div class="container">
+                <h2>Why Partner With Will's Remodeling?</h2>
+                <div class="why_choose_us_grid">
+                    <div class="benefit_item">
+                        <div class="benefit_icon">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="44"  height="44"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+                        </div>
+                        <h3>Quality Craftsmanship</h3>
+                        <p>We use high-quality materials and our attention to detail is second to none, ensuring a beautiful, lasting result for your home.</p>
+                    </div>
+                    <div class="benefit_item">
+                        <div class="benefit_icon">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="44"  height="44"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-messages"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" /><path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" /></svg>
+                        </div>
+                        <h3>Transparent Communication</h3>
+                        <p>You'll be kept in the loop throughout your project with clear, consistent updates and a commitment to your vision from start to finish.</p>
+                    </div>
+                    <div class="benefit_item">
+                        <div class="benefit_icon">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="44"  height="44"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-christmas-tree"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3l4 4l-2 1l4 4l-3 1l4 4h-14l4 -4l-3 -1l4 -4l-2 -1z" /><path d="M14 17v3a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-3" /></svg>
+                        </div>
+                        <h3>Local & Trusted</h3>
+                        <p>As a local, family oriented business, we are dedicated to serving our Lake Keowee community with honesty and integrity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="remodeling_process" class="page_section">
             <div class="container">
                 <h2>Our Simple & Proven Process</h2>
                 <div class="process_timeline">
@@ -66,15 +186,13 @@
                         <h3>Consultation & Discovery</h3>
                         <p>We start with a conversation to understand your vision, needs, and budget for your remodeling project.</p>
                     </div>
-
                     <div class="process_step">
                         <div class="step_icon">
                             <span class="step_number">2</span>
                         </div>
                         <h3>Design & Proposal</h3>
-                        <p>Our team creates a detailed design and provides a transparent proposal outlining all costs and timelines.</p>
+                        <p>Next, you'll have a dedicated design session with Brandid. She'll help you navigate the exciting choices, from fixtures and finishes to colors and overall style, ensuring your new space is a perfect reflection of you.</p>
                     </div>
-
                     <div class="process_step">
                         <div class="step_icon">
                             <span class="step_number">3</span>
@@ -82,49 +200,75 @@
                         <h3>Construction & Build</h3>
                         <p>Our skilled craftsmen bring the design to life, focusing on quality, cleanliness, and clear communication.</p>
                     </div>
-
                     <div class="process_step">
                         <div class="step_icon">
                             <span class="step_number">4</span>
                         </div>
-                        <h3>Final Walk-Through & Handover</h3>
+                        <h3>Final Walk Through & Handover</h3>
                         <p>We ensure every detail meets your satisfaction before proudly handing over your beautiful new space.</p>
                     </div>
                 </div>
+            </div> 
+        </section>
+
+        <section id="final_cta" class="page_section">
+            <div class="container">
+                <h2>Ready to Start Your Transformation?</h2>
+                <p>Let's talk about your project. Contact us today for a free, no-obligation consultation.</p>
+                <a href="pages/contact.html" class="cta_button">Schedule Your Free Consultation</a>
             </div>
         </section>
 
-        </div> </section> <section id="customer-reviews" class="page-section">
+        <section id="customer_reviews" class="page_section">
             <div class="container">
                 <h2>What Our Clients Say</h2>
-                <div class="reviews-grid">
-                    <div class="review-card">
-                        <div class="review-stars">★★★★★</div> 
-                        <blockquote class="review-text">
+                <div class="reviews_grid">
+                    <div class="review_card">
+                        <div class="review_stars">★★★★★</div> 
+                        <blockquote class="review_text">
                             <p>"Will and his team were absolutely fantastic! They did things very well but I did notice this one guy who carried the whole project. He was so cool and his name I think was Jacob"</p>
                         </blockquote>
-                        <p class="reviewer-name">- Mr and Mrs Always Correct, Keowee Keys</p>
-                        <p class="review-project-type">Project: Full Kitchen Remodel</p>
+                        <p class="reviewer_name">- Mr and Mrs Always Correct, Keowee Keys</p>
+                        <p class="review_project_type">Project: Full Kitchen Remodel</p>
                     </div>
-
-                    <div class="review-card">
-                        <div class="review-stars">★★★★★</div>
-                        <blockquote class="review-text">
+                    <div class="review_card">
+                        <div class="review_stars">★★★★★</div>
+                        <blockquote class="review_text">
                             <p>"Five stars for Will's Remodeling! They really transformed our space. There was this one younger guy on the team, maybe named Jacob, who was a wizard with the power tools. The whole team was great, but he was a standout!"</p>
                         </blockquote>
-                        <p class="reviewer-name">- Mark D., Sunset Bay</p>
-                        <p class="review-project-type">Project: Master Bathroom Renovation</p>
+                        <p class="reviewer_name">- Mark D., Sunset Bay</p>
+                        <p class="review_project_type">Project: Master Bathroom Renovation</p>
                     </div>
-
-                    <div class="review-card">
-                        <div class="review-stars">★★★★★</div>
-                        <blockquote class="review-text">
+                    <div class="review_card">
+                        <div class="review_stars">★★★★★</div>
+                        <blockquote class="review_text">
                             <p>"All I will say is Jacob, that's all I need to say"</p>
                         </blockquote>
-                        <p class="reviewer-name">- John Cena, Oconee County</p>
-                        <p class="review-project-type">Project: Two-Story Home Addition</p>
+                        <p class="reviewer_name">- John Cena, Oconee County</p>
+                        <p class="review_project_type">Project: Two-Story Home Addition</p>
                     </div>
+                    <div class="review_card">
+                        <div class="review_stars">★★★★★</div>
+                        <blockquote class="review_text">
+                            <p>"Our new deck is incredible. The quality of work is evident in every detail. The team was professional, clean, and finished right on time. We're already planning our next project with them."</p>
+                        </blockquote>
+                        <p class="reviewer_name">- The Miller Family</p>
+                        <p class="review_project_type">Project: Custom Deck & Patio</p>
                     </div>
+                    <div class="review_card">
+                        <div class="review_stars">★★★★★</div>
+                        <blockquote class="review_text">
+                            <p>"From start to finish, the process was smooth and transparent. Will listened to our ideas and brought them to life even better than we imagined. A truly trustworthy and skilled company."</p>
+                        </blockquote>
+                        <p class="reviewer_name">- Emily R.</p>
+                        <p class="review_project_type">Project: Basement Finishing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="back_to_top">
+
+                <a href="#top" class="secondary_button">Back to the Top</a>
+    
             </div>
         </section>
 
@@ -152,7 +296,7 @@
                 </div>
                 <div class="footer-column Company-Info">
                     <h4>Info</h4>
-                    <p><strong>Location:</strong> Lake Keowee Area & Surroundings</p>
+                    <p><strong>Location:</strong> Lake Keowee Area & Surroundings, SC</p>
                     <p><strong>Hours:</strong> Monday - Friday, 7:00 AM - 6:00 PM</p>
                 </div>
             </div>
@@ -162,6 +306,8 @@
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

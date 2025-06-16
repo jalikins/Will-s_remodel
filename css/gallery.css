@@ -1,9 +1,6 @@
-/* --- Gallery Page Styles (Updated to match 'Our Projects' style) --- */
 
-/* --- Page Header & Filters (Kept from your previous version) --- */
 
 #full_gallery_page h2 {
-    /* Uses .page-section h2 styles, can be customized if needed */
     margin-bottom: 1rem; /* Closer to intro paragraph */
 }
 
@@ -25,8 +22,8 @@
 .service_header {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 3rem auto; /* Center it and add space below */
-    font-family: Arial, sans-serif; /* Fallback if 'Roboto' or other preferred font isn't available */
+    margin: 0 auto 3rem auto; 
+    font-family: Arial, sans-serif; 
     line-height: 1.6;
     color: #121d35;
 }
@@ -34,7 +31,7 @@
 .service_intro_description {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 3rem auto; /* Center it and add space below */
+    margin: 0 auto 3rem auto; 
     font-size: 1.05rem;
     color: #555e6d;
     line-height: 1.7;
@@ -52,7 +49,7 @@
 
 .gallery_header_actions .cta_button,
 .gallery_header_actions .secondary_button {
-    /* ... button styles are kept the same ... */
+    
     padding: 0.75rem 1.75rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -116,27 +113,27 @@
 }
 
 
-/* ======================================================= */
-/* --- Main Gallery Grid (NEW STYLES) --- */
-/* ======================================================= */
 
-/* This section is now adapted from your our_projects.css file */
+/* --- Main Gallery Grid (NEW STYLES) --- */
+
+
+
 
 .gallery_grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* From projects page */
-    gap: 2.5rem; /* From projects page */
-    padding-bottom: 2rem;; /* Space below the grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2.5rem; 
+    padding-bottom: 2rem;; 
 }
 
-/* We are styling the <a> tag to act like the 'project-card' */
+
 .gallery_grid > a {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-    overflow: hidden; /* Important! Ensures image corners are rounded */
+    overflow: hidden; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: block; /* The anchor tag will be the grid item */
+    display: block; 
     text-decoration: none;
 }
 
@@ -146,12 +143,70 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Applying the image styling from the project card */
+
 .gallery_grid img {
     width: 100%;
-    height: 240px;      /* Fixed height for a uniform look */
-    object-fit: cover;  /* This prevents images from stretching or squishing */
+    height: 240px;      
+    object-fit: cover;  
     display: block;
 }
 
 
+/* --- Gallery Description Box Styles --- */
+
+#gallery_description_box {
+    background-color: #ffffff;
+    border-left: 5px solid #b58a40; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border-radius: 0 8px 8px 0;
+    padding: 1.5rem 2rem;
+    margin: -1.5rem 0 3rem 0; 
+    text-align: center;
+
+    /* --- For the smooth reveal animation --- */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+#gallery_description_box.active {
+    max-height: 500px; 
+    opacity: 1;
+    padding-top: 1.5rem; 
+    padding-bottom: 1.5rem;
+}
+
+.gallery_description_title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #121d35;
+    margin-bottom: 0.75rem;
+}
+
+.gallery_description_text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555e6d;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Style for the Dynamic "Now Viewing" Header --- */
+
+#gallery_current_filter_header {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #555e6d;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+}
+
+#gallery_current_filter_header strong {
+    font-weight: 700;
+    color: #121d35;
+}

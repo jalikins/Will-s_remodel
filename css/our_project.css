@@ -1,17 +1,17 @@
 /* --- Portfolio Overview Page Styles --- */
 #portfolio-overview {
-    background-color: #ffffff; /* Or a very light gray like #f8f9fa */
+    background-color: #ffffff; 
 }
 
 #portfolio-overview h2 {
-    /* Uses .page-section h2 styles, can be customized if needed */
-    margin-bottom: 1rem; /* Closer to intro paragraph */
+    
+    margin-bottom: 1rem; 
 }
 
 .section-intro {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 3rem auto; /* Center it and add space below */
+    margin: 0 auto 3rem auto; 
     font-size: 1.05rem;
     color: #555e6d;
     line-height: 1.7;
@@ -19,26 +19,26 @@
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 2.5rem; /* Space between project cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2.5rem; 
 }
 
 .project-card {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-    overflow: hidden; /* Ensures image respects border-radius */
+    overflow: hidden; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Allows anchor to fill card */
+    display: flex; 
     flex-direction: column;
 }
 
 .project-card a {
     text-decoration: none;
-    color: inherit; /* Inherit text color from parent */
+    color: inherit; 
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Make anchor fill the card */
+    flex-grow: 1; 
 }
 
 .project-card:hover {
@@ -48,25 +48,25 @@
 
 .project-card img {
     width: 100%;
-    height: 240px; /* Fixed height for cover images, adjust as needed */
-    object-fit: cover; /* Cover the area, may crop to fit aspect ratio */
-    /* border-bottom: 1px solid #eee; */ /* Optional: separator */
+    height: 240px;
+    object-fit: cover; 
+    
 }
 
 .project-card-content {
     padding: 1.5rem;
-    text-align: center; /* Center title and type */
-    flex-grow: 1; /* Allows content to take space if card heights vary */
+    text-align: center; 
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center if desired, or remove for top alignment */
+    justify-content: center; 
 }
 
 .project-card h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
-    color: #121d35; /* Dark heading color */
+    color: #121d35;
     margin-bottom: 0.5rem;
 }
 
@@ -74,6 +74,28 @@
     font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
     color: #180060; /* Accent color for project type */
-    /* font-style: italic; */
     margin-bottom: 0;
 }
+
+/* --- Styles for Links on "Our Projects" Page --- */
+
+
+.view-all-gallery-link-container {
+    text-align: center;
+    margin-bottom: 3rem; 
+}
+
+
+.section-outro-link {
+    text-align: center;
+    margin-top: 4rem; 
+    padding-top: 3rem; 
+    border-top: 1px solid #eee; 
+}
+
+.section-outro-link p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+

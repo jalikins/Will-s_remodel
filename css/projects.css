@@ -1,7 +1,7 @@
 /* --- Project Detail Page - Revised Gallery Styles --- */
 
 #project-detail-page {
-    background-color: #ffffff; /* Or your preferred light background */
+    background-color: #ffffff; 
 }
 
 .project-header {
@@ -27,7 +27,7 @@
 
 .back-to-portfolio-link {
     display: inline-block;
-    color: #16233f; /* Your accent color */
+    color: #16233f; 
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -47,7 +47,7 @@
     font-size: 2rem;
     color: #121d35;
     text-align: center;
-    margin-bottom: 2.5rem; /* Increased space */
+    margin-bottom: 2.5rem; 
     border-bottom: 2px solid #b58a40;
     display: inline-block;
     padding-bottom: 0.5rem;
@@ -56,8 +56,8 @@
 /* Container for the side-by-side Before and After galleries */
 .before-after-showcase {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns for Before and After */
-    gap: 2.5rem; /* Increased gap between Before and After sections */
+    grid-template-columns: 1fr 1fr; 
+    gap: 2.5rem; 
     margin-bottom: 1.5rem;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .image-gallery-column {
-    /* Each column (Before or After) */
+
 }
 
 .gallery-title { /* For "Before" and "After" headings */
@@ -81,22 +81,22 @@
 }
 
 .gallery-grid {
-    display: flex;          /* 1. Change display from 'grid' to 'flex' */
-    flex-wrap: wrap;        /* 2. Allow items to wrap onto new lines */
-    justify-content: center;/* 3. THIS IS THE KEY: It centers the items horizontally */
-    gap: 1.25rem;           /* 'gap' works great with flexbox too! */
+    display: flex;          
+    flex-wrap: wrap;        
+    justify-content: center;
+    gap: 1.25rem;           
 }
 
 .gallery-grid > a {
-    flex: 0 1 240px; /* flex-grow, flex-shrink, flex-basis */
-  
+    flex: 0 1 240px; 
+    
 }
 
 .gallery-grid img {
     width: 100%;
-    height: auto; /* Let height adjust to maintain aspect ratio by default */
-    aspect-ratio: 4 / 3; /* Or 1/1 for square, 16/9 for wider. Enforces consistency. */
-    object-fit: cover; /* Ensures image fills the aspect ratio box, may crop */
+    height: auto;  
+    aspect-ratio: 4 / 3;  
+    object-fit: cover;  
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     display: block; /* Removes extra space below image */
@@ -104,15 +104,15 @@
 }
 
 .crop-focus-sink {
-    object-position: bottom center;    /* For the tall images */
+    object-position: bottom center;   
 }
 
-.gallery-grid a:hover img { /* If images are wrapped in links for a lightbox */
+.gallery-grid a:hover img { 
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
-.room-description { /* (You likely have this from before) */
+.room-description { 
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     line-height: 1.7;
@@ -120,6 +120,10 @@
     max-width: 750px;
     margin: 1.5rem auto 0 auto; /* Adjusted margin */
     text-align: center;
+}
+
+.back_to_top {
+    margin-bottom: 1rem;
 }
 
 /* Responsive adjustments */
@@ -132,11 +136,11 @@
         font-size: 1.3rem;
     }
     .before-after-showcase {
-        grid-template-columns: 1fr; /* Stack Before and After galleries */
-        gap: 2rem; /* Gap when stacked */
+        grid-template-columns: 1fr; 
+        gap: 2rem; 
     }
     .gallery-grid {
-        /* Example: 2 images per row on mobile for the mini-galleries */
+        
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 0.75rem;
     }

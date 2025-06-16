@@ -1,6 +1,6 @@
 /* --- Contact Page Specific Styles --- */
 #contact-page {
-    background-color: #f8f9fa; /* Light background for the section */
+    background-color: #ffffff; /* Light background for the section */
 }
 
 #contact-page h2 {
@@ -18,21 +18,21 @@
 
 .contact-layout {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 3rem;       /* Space between form and details */
-    background-color: #ffffff; /* White background for the content area */
+    flex-wrap: wrap; 
+    gap: 3rem;       
+    background-color: #ffffff; 
     padding: 2.5rem;
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.08);
 }
 
 .contact-form-container {
-    flex: 2; /* Form takes more space */
-    min-width: 300px; /* Minimum width before wrapping */
+    flex: 2; 
+    min-width: 300px; 
 }
 
 .contact-details-container {
-    flex: 1; /* Details take less space */
+    flex: 1; 
     min-width: 280px;
 }
 
@@ -43,7 +43,7 @@
     color: #121d35;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #180060; /* Your accent color */
+    border-bottom: 2px solid #180060; 
     display: inline-block;
 }
 
@@ -79,19 +79,19 @@
 .form-group input[type="email"]:focus,
 .form-group input[type="tel"]:focus,
 .form-group textarea:focus {
-    border-color: #180060; /* Accent color on focus */
+    border-color: #180060; 
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(24, 0, 96, 0.25); /* Accent glow */
+    box-shadow: 0 0 0 0.2rem rgba(24, 0, 96, 0.25); 
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow vertical resizing, not horizontal */
+    resize: vertical; 
     min-height: 120px;
 }
 
 .form-submit-button { /* Reuses .cta-button styles */
-    /* Add any specific overrides if needed, e.g., width */
-    /* width: 100%; */ /* Optional: make button full width */
+    
+    
     padding: 0.8rem 2rem; /* Slightly adjusted padding */
     cursor: pointer;
 }
@@ -106,18 +106,18 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #333;
-    display: block; /* Make strong tag take its own line or style differently */
+    display: block; 
     margin-bottom: 0.25rem;
 }
 
 .contact-details-item p {
     font-family: 'Roboto', sans-serif;
     color: #555e6d;
-    margin: 0 0 0.25rem 0; /* Small margin for paragraphs under strong */
+    margin: 0 0 0.25rem 0; 
 }
 
 .contact-details-item a {
-    color: #180060; /* Accent color for links */
+    color: #180060; 
     text-decoration: none;
 }
 
@@ -125,13 +125,13 @@
     text-decoration: underline;
 }
 
-/* Responsive adjustments for Contact Page layout */
-@media (max-width: 820px) { /* Adjust breakpoint as needed */
+
+@media (max-width: 820px) { 
     .contact-layout {
-        flex-direction: column; /* Stack form and details */
+        flex-direction: column; 
         padding: 1.5rem;
     }
     .contact-form-container {
-        margin-bottom: 2.5rem; /* Space when stacked */
+        margin-bottom: 2.5rem; 
     }
 }

@@ -1,55 +1,62 @@
-// --- generate_gallery.js (Upgraded Version 2.0) ---
+// --- generate_gallery.js (Upgraded Version 4.0 - Handles Complex Structures) ---
 
 const fs = require('fs');
 const path = require('path');
 
-// Configuration
+// --- Configuration ---
 const images_root_path = path.join(__dirname, 'images', 'projects');
 const output_file = path.join(__dirname, 'js', 'gallery_data.js');
-const image_extensions = ['.webp', '.jpg', '.jpeg', '.png', '.gif'];
+const image_extensions = ['.webp', '.jpg', 'jpeg', '.png', '.gif'];
+const known_categories = ['kitchen', 'bathroom', 'living_room', 'outdoor', 'bedroom'];
 
 console.log(`Scanning for images in: ${images_root_path}`);
 
-// This function will recursively find all image file paths
+// This function recursively finds all image file paths
 function find_all_images(directory) {
     let all_files = [];
-    const files = fs.readdirSync(directory);
-    for (const file of files) {
-        const full_path = path.join(directory, file);
-        if (fs.statSync(full_path).isDirectory()) {
-            all_files = all_files.concat(find_all_images(full_path));
-        } else if (image_extensions.includes(path.extname(file).toLowerCase())) {
-            all_files.push(full_path);
+    try {
+        const files = fs.readdirSync(directory);
+        for (const file of files) {
+            const full_path = path.join(directory, file);
+            if (fs.statSync(full_path).isDirectory()) {
+                all_files = all_files.concat(find_all_images(full_path));
+            } else if (image_extensions.includes(path.extname(file).toLowerCase())) {
+                // RULE: Filter out images with "old_" in the filename right away
+                if (!path.basename(file).toLowerCase().includes('old_')) {
+                    all_files.push(full_path);
+                }
+            }
         }
+    } catch (error) {
+        console.error(`Could not read directory: ${directory}`, error);
     }
     return all_files;
 }
 
-// Main execution block
+
+// --- Main Execution Block ---
 try {
-    // 1. Get a flat list of every single image file
+    // 1. Get a flat list of every single "new" image file
     const all_image_paths = find_all_images(images_root_path);
 
-    // 2. Filter out any images with "old_" in the filename
-    const new_image_paths = all_image_paths.filter(p => !path.basename(p).toLowerCase().includes('old_'));
-    
-    // 3. Group images by a common "base name" to find pairs
+    // 2. Group images by a common "base name" to find pairs across different folders
     const image_groups = {};
 
-    for (const image_path of new_image_paths) {
-        // Create a unique identifier for each image, ignoring size folders and suffixes
-        // e.g., '.../beacon/bathroom/new_bathroom(1)'
+    for (const image_path of all_image_paths) {
+        // Create a unique identifier for each image by removing size folders and suffixes.
+        // This allows us to match '/large/image_large.webp' with '/small/image_small.webp'
         const base_identifier = image_path
-            .replace(path.sep + 'large' + path.sep, path.sep) // remove '/large/'
-            .replace(path.sep + 'small' + path.sep, path.sep) // remove '/small/'
+            .replace(path.sep + 'large' + path.sep, path.sep)
+            .replace(path.sep + 'small' + path.sep, path.sep)
             .replace(/_large|_small/i, '')
             .replace(path.extname(image_path), '');
 
+        // Create a group for this image if one doesn't exist
         if (!image_groups[base_identifier]) {
             image_groups[base_identifier] = {};
         }
 
-        // Store the path based on whether it's a small or large version
+        // Store the full path based on whether it's a small, large, or single version
         if (image_path.toLowerCase().includes('_small')) {
             image_groups[base_identifier].small = image_path;
         } else if (image_path.toLowerCase().includes('_large')) {
@@ -59,47 +66,51 @@ try {
         }
     }
 
-    // 4. Process the grouped images to create the final imageData array
+    // 3. Process the grouped images to create the final imageData array
     const image_data = Object.values(image_groups).map(group => {
-        // Determine the correct src and largeSrc
-        const src = group.small || group.single;      // Prioritize the small version for the thumbnail
-        const largeSrc = group.large || group.single; // Prioritize the large version for the lightbox
+        // This logic correctly assigns the image source for the thumbnail (src) and the lightbox (largeSrc)
+        const src = group.small || group.single || group.large;      // Use small if it exists, else single, else large
+        const largeSrc = group.large || group.single || group.small; // Use large if it exists, else single, else small
 
-        // If we couldn't find a valid source for the thumbnail, skip this image
+        // If after all that we still have nothing, skip this group
         if (!src) return null;
 
-        // The category is the name of the folder containing the image
-        const category = path.basename(path.dirname(src));
+        // Correctly determine the category by looking at the folder name, ignoring 'large' or 'small' folders
+        let category_path = path.dirname(src);
+        if (path.basename(category_path).toLowerCase() === 'small') {
+            category_path = path.dirname(category_path); // Go up one level if inside a 'small' folder
+        }
+        const folder_name = path.basename(category_path);
+        const final_category = known_categories.includes(folder_name) ? folder_name : 'misc';
 
         // Create a nice alt text from the filename
         const alt_text = path.basename(src, path.extname(src))
-            .replace(/_small/i, '')
+            .replace(/_small|_large/i, '')
             .replace(/_/g, ' ')
-            .replace(/-/g, ' ')
             .replace(/\(\d+\)/, '')
             .replace(/\b\w/g, l => l.toUpperCase())
             .trim();
 
         return {
-            category: category,
+            category: final_category,
             src: `../${path.relative(__dirname, src).replace(/\\/g, '/')}`,
             largeSrc: `../${path.relative(__dirname, largeSrc).replace(/\\/g, '/')}`,
-            alt: `${alt_text} - ${category.charAt(0).toUpperCase() + category.slice(1).replace(/_/g, ' ')}`
+            alt: `${alt_text} - ${folder_name.charAt(0).toUpperCase() + folder_name.slice(1).replace(/_/g, ' ')}`
         };
-    }).filter(Boolean); // Filter out any null entries
+    }).filter(Boolean); // Filter out any null entries that might have occurred
 
-    // 5. Sort the final data alphabetically by category
+    // 4. Sort the final data alphabetically by category
     image_data.sort((a, b) => a.category.localeCompare(b.category));
 
-    // 6. Create the final content for the JS file
+    // 5. Create the final content for the JS file
     const file_content = `// This file is auto-generated by generate-gallery.js. DO NOT EDIT MANUALLY.\nconst imageData = ${JSON.stringify(image_data, null, 4)};`;
 
-    // 7. Write the data to the output file
+    // 6. Write the data to the output file
     fs.writeFileSync(output_file, file_content);
 
     console.log(`✅ Success! ${image_data.length} images processed and filtered.`);
-    console.log(`✅ Data written to ${output_file}`);
+    console.log(`✅ Your 'gallery_data.js' file has been rebuilt successfully.`);
 
-} catch (error) {
+} catch (error) {// The 'try' block now has its closing brace '}' above
     console.error('❌ Error scanning directory or writing file:', error);
 }

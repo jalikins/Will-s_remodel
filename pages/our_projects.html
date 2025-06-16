@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects - Will's Remodeling LLC</title>
+    <title>Featured Remodeling Projects | Will's Remodeling LLC</title>
+    <meta name="description" content="View a portfolio of featured remodeling projects by Will's Remodeling LLC. See our high-quality work on kitchens, bathrooms, and living spaces in the Lake Keowee, SC area.">
+    <link rel="icon" href="../images/logos/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../images/logos/apple-touch-icon.png">
+    <link rel="canonical" href="https://www.WillsKeoweeRemodeling.com/pages/our_projects.html" />
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/our_project.css">
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.WillsKeoweeRemodeling.com/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Our Projects",
+            "item": "https://www.WillsKeoweeRemodeling.com/pages/our_projects.html"
+        }]
+        }
+    </script>
     </head>
 <body>
     <header>
         <div class="container"> 
-            <a href="../index.html" id="logo"><img src="../images/logos/long_will_logo.webp"></a>
+            <a href="../index.html" id="logo"><img src="../images/logos/long_will_logo.webp" alt="Will's Remodeling LLC Logo"></a>
+
+            <button class="mobile_nav_toggle" aria-controls="primary_navigation" aria-expanded="false">
+                <span class="sr_only">Menu</span>
+            </button>
+
             <nav>
-                <ul>
-                    <li><a href="about.html">About</a></li> 
+                <ul id="primary_navigation" class="primary_navigation" data-visible="false">
+                    <li><a href="about.html">About Us</a></li> 
                     <li><a href="our_projects.html" class="active">Our Projects</a></li>
+                    <li><a href="gallery.html">The Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -22,55 +49,52 @@
     </header>
 
     <main>
-        <section id="portfolio-overview" class="page-section">
-            <div class="container">
-                <h2>Featured Projects</h2>
-                <p class="section-intro">Take a look at some of our recently completed remodeling projects. Click on any project to see the transformation with before and after photos.</p>
-
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <a href="projects/beacon.html"> 
-                            <img src="../images/projects/beacon/kitchen/new_kitchen(3).webp" alt="Beacon Dr House Renovation">
-                            <div class="project-card-content">
-                                <h3>Beacon Dr</h3>
-                                <p class="project-type">Powder Bath, Kitchen, Bedroom, and Living room</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="project-card">
-                        <a href="projects/wynward.html">
-                            <img src="../images/projects/wynward/living_room/new_living_room(2).webp" alt="Historic Downtown Bathroom Restoration">
-                            <div class="project-card-content">
-                                <h3>Wynward Point</h3>
-                                <p class="project-type">Living Room, Kitchen, and Bathroom</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="project-card">
-                        <a href="project-sunset-addition.html">
-                            <img src="../images/projects/sunset-addition/cover.jpg" alt="Sunset Hills Home Addition">
-                            <div class="project-card-content">
-                                <h3>Your moms</h3>
-                                <p class="project-type">Two-Story Rear Addition</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="project-card">
-                        <a href="project-another-example.html">
-                            <img src="../images/projects/another-example/cover.jpg" alt="Another Example Project">
-                            <div class="project-card-content">
-                                <h3>Basement Finishing Project</h3>
-                                <p class="project-type">Entertainment Space Creation</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+    <section id="portfolio-overview" class="page_section">
+        <div class="container">
+            <h1>Featured Projects</h1>
+            <p class="section-intro">Take a look at some of our recently completed remodeling projects. Click on any project to see the transformation with before and after photos.</p>
+            
+            <div class="view-all-gallery-link-container">
+                <a href="gallery.html" class="secondary_button">View Full Photo Gallery</a>
             </div>
-        </section>
-    </main>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <a href="projects/beacon.html"> 
+                        <img src="../images/projects/beacon/kitchen/new_kitchen(3).webp" alt="Beacon Dr House Renovation">
+                        <div class="project-card-content">
+                            <h3>Beacon Dr</h3>
+                            <p class="project-type">Powder Bath, Kitchen, Bedroom, and Living room</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="projects/wynward.html">
+                        <img src="../images/projects/wynward/living_room/new_living_room(2).webp" alt="Historic Downtown Bathroom Restoration">
+                        <div class="project-card-content">
+                            <h3>Wynward Point</h3>
+                            <p class="project-type">Living Room, Kitchen, and Bathroom</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="projects/lash_up_ln.html">
+                        <img src="../images/projects/all/small/lashln/basement/new_basement(1)_small.webp" alt="Sunset Hills Home Addition">
+                        <div class="project-card-content">
+                            <h3>Lash Up Ln</h3>
+                            <p class="project-type">Bathroom, Basement, Closet</p>
+                        </div>
+                    </a>
+                </div>
+            </div> <div class="section-outro-link">
+                <p>Ready to see more? Explore hundreds of photos from all our projects.</p>
+                <a href="gallery.html" class="cta_button">Enter The Full Gallery</a>
+            </div>
+
+        </div> </section>
+</main>
 
     <footer>
         <div class="container">
@@ -94,7 +118,7 @@
                 </div>
                 <div class="footer-column Company-Info">
                     <h4>Info</h4>
-                    <p><strong>Location:</strong> Lake Keowee Area & Surroundings</p>
+                    <p><strong>Location:</strong> Lake Keowee Area & Surroundings, SC</p>
                     <p><strong>Hours:</strong> Monday - Friday, 7:00 AM - 6:00 PM</p>
                 </div>
             </div>
@@ -104,6 +128,8 @@
         </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script src="../js/mobil.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 </body>
 </html>
