@@ -50,3 +50,40 @@ navToggle.addEventListener('click', () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Select all "back to top" links
+  const backToTopLinks = document.querySelectorAll('a[href="#top"]');
+
+  backToTopLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // 1. Prevent the default jump-to-top action
+      e.preventDefault();
+
+      // 2. Animate the scroll to the top of the page
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+});
+
+// In a <script> tag on your index.html page
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Find all links that have a data-filter attribute
+  const filterLinks = document.querySelectorAll('a[data-filter]');
+
+  filterLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Get the filter value from the data-filter attribute
+      const filterValue = link.dataset.filter;
+      
+      // Save it to sessionStorage
+      // This storage is temporary and lasts only for the browser tab session
+      sessionStorage.setItem('galleryFilter', filterValue);
+
+      // The link will now navigate to "/gallery" as normal
+    });
+  });
+});

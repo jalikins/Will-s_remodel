@@ -65,27 +65,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- NEW LOGIC FOR PAGE LOAD ---
-    // This part runs once when the gallery page first loads.
+    // +++ NEW LOGIC (Reading from sessionStorage) - Use this instead +++
+    // 1. Check if a filter value was saved in sessionStorage
+    const savedFilter = sessionStorage.getItem('galleryFilter');
 
-    // 1. Get the URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const filterFromURL = urlParams.get('filter');
-
-    // 2. Check if a filter was passed in the URL
-    if (filterFromURL) {
+    // 2. Check if a filter was passed from the previous page
+    if (savedFilter) {
         // If yes, display images for that category
-        displayImages(filterFromURL);
+        displayImages(savedFilter);
 
         // Also, update the active state of the filter buttons
         filterButtons.forEach(btn => {
             btn.classList.remove('active');
-            if (btn.getAttribute('data-category') === filterFromURL) {
+            if (btn.getAttribute('data-category') === savedFilter) {
                 btn.classList.add('active');
             }
         });
+        
+        // 3. IMPORTANT: Clear the filter from storage after using it
+        sessionStorage.removeItem('galleryFilter');
+
     } else {
-        // If no filter in URL, just display "all" as the default
+        // If no filter was passed, just display "all" as the default
         displayImages('all');
     }
 
