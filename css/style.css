@@ -142,7 +142,7 @@ header nav ul {
     display: none;
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     .primary_navigation {
         position: fixed;
         z-index: 1000;
@@ -156,13 +156,29 @@ header nav ul {
         background: hsl(0 0% 100% / 0.1);
         backdrop-filter: blur(1rem);
         -webkit-backdrop-filter: blur(1rem);
+        
+        /* --- CHANGES START HERE --- */
         transform: translateX(100%);
         transition: transform 350ms ease-out;
+        
+        /* Make it invisible and non-interactive by default */
+        visibility: hidden; 
+        pointer-events: none;
+        /* --- CHANGES END HERE --- */
     }
 
     .primary_navigation[data-visible="true"] {
         transform: translateX(0%);
+        
+        /* --- CHANGES START HERE --- */
+        /* Make it visible and interactive ONLY when open */
+        visibility: visible;
+        pointer-events: auto;
+        /* --- CHANGES END HERE --- */
     }
+
+    /* ... other rules ... */
+
 
     header .primary_navigation a {
         color: var(--primary_blue);
@@ -197,8 +213,30 @@ header nav ul {
     .mobile_nav_toggle::before { top: 25%; }
     .mobile_nav_toggle::after { bottom: 25%; }
 
-    .mobile_nav_toggle[aria-expanded="true"]::before { transform: translateY(5.5px) rotate(45deg); }
-    .mobile_nav_toggle[aria-expanded="true"]::after { transform: translateY(-5.5px) rotate(-45deg); }
+    .mobile_nav_toggle[aria-expanded="true"]::before { 
+        transform: translateY(5.5px) rotate(45deg); 
+    }
+    .mobile_nav_toggle[aria-expanded="true"]::after { 
+        transform: translateY(-5.5px) rotate(-45deg); 
+    }
+
+    header .primary_navigation a {
+        color: var(--primary_blue);
+        font-weight: 600;
+        font-size: 1.2rem;
+        text-decoration: none; /* This removes the underline from all links */
+        position: relative;
+    }
+
+    header .primary_navigation a.active::after {
+        content: ''; /* Creates the pseudo-element */
+        position: absolute;
+        width: 100%; 
+        height: 2px; 
+        background-color: var(--primary_blue); /* Color of the underline */
+        bottom: -5px; 
+        left: 0;
+    }
 }
 
 /* --- Desktop Navigation --- */
@@ -393,7 +431,7 @@ footer {
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
-    color: var(--orange_accent);
+    color: #333333;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 

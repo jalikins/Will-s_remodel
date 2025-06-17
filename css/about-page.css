@@ -66,6 +66,6 @@
     .about-layout {
         flex-direction: column-reverse;
         align-items: center;
-        padding: 2rem; 
+        padding: .4rem; 
     }
 }
