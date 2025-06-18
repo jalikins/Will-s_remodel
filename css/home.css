@@ -21,12 +21,9 @@
 
 .box1 {
     background-color: rgb(0 0 0 / 0.2);
-    /* Slightly darker for better visibility */
     color: #fff;
     padding: .7rem;
-    /* Adds space around the text */
     border-radius: 10px;
-    /* Optional: softens the corners */
 }
 
 #hero p {
@@ -53,20 +50,19 @@
 }
 
 @media (max-width: 768px) {
-    /* ... your other mobile nav styles are already here ... */
-
     .box1 {
         display: inline-block;
-        /* This makes the box wrap the text */
-        /* The padding and background from the desktop rule will still apply */
     }
 }
 
-/* --- Services Overview Section --- */
-#services-overview {
-    background-color: #f8f9fa;
+/* --- Light Sections: Use the warm off-white for a clean, premium paper feel --- */
+#services-overview,
+#remodeling_process,
+#customer_reviews {
+    background-color: var(--white); /* #faf0e6 */
 }
 
+/* --- Services Overview Section --- */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -137,11 +133,6 @@
 }
 
 /* --- Remodeling Process Section --- */
-#remodeling_process {
-    background-color: #f8f9fa;
-    overflow: hidden;
-}
-
 .process_timeline {
     display: flex;
     justify-content: space-between;
@@ -228,25 +219,15 @@
         align-items: center;
         gap: 2rem;
     }
-
     .process_step:not(:last-child)::after {
         display: none;
     }
-
     .process_step {
         max-width: 400px;
     }
 }
 
-/* =================================================================== */
-/* REVIEW CARD SPECIFIC                                                */
-/* =================================================================== */
-#customer_reviews {
-    background-color: #f8f9fa;
-    padding-top: 4rem;
-    padding-bottom: 5rem;
-}
-
+/* --- Review Section --- */
 .reviews_grid {
     margin: 0 -15px;
 }
@@ -268,6 +249,7 @@
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
+
 
 .review_stars {
     text-align: center;
@@ -303,17 +285,16 @@
 }
 
 /* Slick Carousel Styles */
-.slick-prev,
-.slick-next {
+.slick-prev, .slick-next {
     position: absolute;
-    top: 50%; /* Vertically center the button */
+    top: 50%;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     width: 40px !important;
     height: 40px !important;
-    padding: 0 !important; /* Remove the large padding */
-    transform: translateY(-80%); /* Adjust vertical alignment */
+    padding: 0 !important;
+    transform: translateY(-80%);
     cursor: pointer;
     border: none;
     outline: none;
@@ -322,33 +303,74 @@
     background: var(--primary_blue) !important;
     color: white !important;
 }
-
-.slick-prev:hover,
-.slick-next:hover {
+.slick-prev:hover, .slick-next:hover {
     background: var(--orange_accent) !important;
     transform: translateY(-50%) scale(1.1);
 }
-
-/* Position arrows outside the review cards */
-.slick-prev {
-    left: -55px !important;
-}
-
-.slick-next {
-    right: -55px !important;
-}
-
-/* Style for the arrow icon */
-.slick-prev:before,
-.slick-next:before {
+.slick-prev { left: -55px !important; }
+.slick-next { right: -55px !important; }
+.slick-prev:before, .slick-next:before {
     font-family: 'slick';
     font-size: 22px !important;
     color: white !important;
 }
 
-/* --- Why Choose Us Section --- */
-#why_choose_us {
-    background-color: #f8f9fa;
+
+/* =================================================================== */
+/* ==== PROFESSIONAL "ARCHITECT'S BLUEPRINT" THEME ==== */
+/* =================================================================== */
+
+#why_choose_us,
+#final_cta {
+    position: relative;
+    background-color: var(--primary_blue);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 2rem 2rem;
+    padding: 10rem 1.5rem 6rem 1.5rem;
+    margin-top: -1px;
+}
+
+/* ==== NEW: Creates the colored polygon shape ==== */
+#why_choose_us::before,
+#final_cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    background-color: #241a12; /* The dark wooden brown */
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 3vw);
+    
+    /* MODIFIED: Changed z-index from 0 to 1 to bring the shape forward */
+    z-index: 1; 
+}
+
+/* ==== NEW: Bring the text and content forward ==== */
+/* This new rule ensures all content (headings, cards) sits on top of the new brown shape */
+#why_choose_us .container,
+#final_cta .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+#why_choose_us h2,
+#final_cta h2 {
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#why_choose_us h2::after {
+    background-color: var(--orange_accent);
+}
+
+#final_cta p {
+    color: #ffffff;
 }
 
 .why_choose_us_grid {
@@ -363,6 +385,7 @@
     border-radius: 10px;
     background-color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
 }
 
 .benefit_item:hover {
@@ -408,20 +431,7 @@
 
 /* --- Final CTA Section --- */
 #final_cta {
-    background-color: var(--primary_blue);
-    color: #ffffff;
     text-align: center;
-}
-
-#final_cta h2 {
-    color: #ffffff;
-}
-
-#final_cta p {
-    max-width: 600px;
-    margin: 1.5rem auto 2.5rem auto;
-    font-size: 1.1rem;
-    opacity: 0.9;
 }
 
 #final_cta .cta_button {
@@ -431,10 +441,72 @@
     font-weight: 700;
     padding: 1rem 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 #final_cta .cta_button:hover {
     background-color: #ffffff;
     border-color: #ffffff;
+    color: var(--primary_blue);
     transform: translateY(-3px) scale(1.05);
+}
+
+
+/* =================================================================== */
+/* ==== NEW: Clipped Corner Effect for Light Sections ==== */
+/* =================================================================== */
+#services-overview,
+#remodeling_process,
+#customer_reviews {
+    position: relative; 
+}
+
+#services-overview::before,
+#remodeling_process::before,
+#customer_reviews::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    background-color: #241a12; /* The dark wooden brown */
+    clip-path: polygon(0 0, 100% 0, 100% 3vw);
+    
+    /* MODIFIED: Changed z-index from 0 to 1 to bring the shape forward */
+    z-index: 1; 
+}
+
+/* ==== NEW: Bring the text and content forward ==== */
+/* This new rule ensures all content (headings, cards) sits on top of the new brown shape */
+#services-overview .container,
+#remodeling_process .container,
+#customer_reviews .container {
+    position: relative;
+    z-index: 2;
+}
+/* This pseudo-element adds the orange color "behind" the clipped corner */
+
+
+
+/* =================================================================== */
+/* ==== Mobile Responsiveness for Transitions ==== */
+/* =================================================================== */
+@media (max-width: 768px) {
+    /* On smaller screens, disable ALL complex clip-path transitions for a clean layout */
+    #why_choose_us,
+    #final_cta,
+    #remodeling_process,
+    #customer_reviews {
+        clip-path: none;
+        margin-top: 0;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    /* We also need to hide the corner accent color on mobile */
+    #remodeling_process::before,
+    #customer_reviews::before {
+        display: none;
+    }
 }
