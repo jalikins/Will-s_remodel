@@ -1,0 +1,11 @@
+# Main Pages
+/about          /pages/about.html          200
+/our-projects   /pages/our_projects.html   200
+/gallery        /pages/gallery.html        200
+/contact        /pages/contact.html        200
+/thank-you      /pages/thank_you.html      200
+
+# Individual Project Pages
+/projects/beacon   /pages/projects/beacon.html      200
+/projects/lashln   /pages/projects/lash_up_ln.html  200
+/projects/wynward  /pages/projects/wynward.html     200
