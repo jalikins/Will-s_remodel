@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bedroom: { title: 'Bedroom Remodels', text: 'Your bedroom should be a peaceful escape. We help design serene and personal spaces with improved layouts, custom closets, and calming aesthetics.' },
         misc: { title: 'Miscellaneous & Custom Projects', text: 'Have another project in mind? We handle a wide range of custom requests including basement finishing, custom carpentry, entryways, and much more. If you can dream it, we can build it.' }
     };
-
+/* This is for when outdoor did not have pictures
     function displayImages(filterCategory) {
     // Update description box
     if (categoryDescriptions[filterCategory]) {
@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
         galleryItem.appendChild(imgElement);
         galleryContainer.appendChild(galleryItem);
     });
-}
-    /* HERE IS THE OLD LOGIC
+}*/
+    
     function displayImages(filterCategory) {
         // Update description box
         if (categoryDescriptions[filterCategory]) {
@@ -117,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
             galleryContainer.appendChild(galleryItem);
         });
     }
-    */
 
     // +++ NEW LOGIC (Reading from sessionStorage) - Use this instead +++
     // 1. Check if a filter value was saved in sessionStorage

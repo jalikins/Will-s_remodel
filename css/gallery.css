@@ -77,14 +77,14 @@
 }
 
 
-/* Work in progress sign for the gallery */
+/* Work in progress sign for the gallery 
 .wip-gallery-sign {
   background-color: #f8f9fa;
   border: 2px dashed var(--primary_blue);
   border-radius: 10px;
   padding: 3rem;
   text-align: center;
-  grid-column: 1 / -1; /* Make it span the full grid width */
+  grid-column: 1 / -1; /* Make it span the full grid width 
   margin: 2rem 0;
 }
 
@@ -100,3 +100,4 @@
   font-size: 1.1rem;
   color: #555e6d;
 }
+*/
