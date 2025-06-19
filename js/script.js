@@ -31,6 +31,12 @@ $(document).ready(function(){
         ]
     });
 
+    // Initialize Animate On Scroll (AOS)
+    AOS.init({
+        duration: 1000, // Animation duration in milliseconds
+        once: true,     // Animation happens only once
+    });
+
 });
 
 // --- Mobile Navigation Toggle ---
