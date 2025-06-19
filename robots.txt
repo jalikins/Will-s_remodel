@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /pages/thank_you.html
+Sitemap: https://www.willsremodelingllc.com/sitemap.xml
