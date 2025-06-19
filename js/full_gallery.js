@@ -24,6 +24,59 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     function displayImages(filterCategory) {
+    // Update description box
+    if (categoryDescriptions[filterCategory]) {
+        const descriptionData = categoryDescriptions[filterCategory];
+        descriptionBox.innerHTML = `
+            <h3 class="gallery_description_title">${descriptionData.title}</h3>
+            <p class="gallery_description_text">${descriptionData.text}</p>
+        `;
+        descriptionBox.classList.add('active');
+    } else {
+        descriptionBox.innerHTML = '';
+        descriptionBox.classList.remove('active');
+    }
+
+    // Special case for 'outdoor' category
+    if (filterCategory === 'outdoor') {
+        galleryContainer.innerHTML = `
+            <div class="wip-gallery-sign">
+                <h3>Work In Progress</h3>
+                <p>We are currently compiling photos of our outdoor projects. Please check back soon for an update!</p>
+            </div>
+        `;
+        return; // Stop the function here for the outdoor category
+    }
+
+    // Display images
+    galleryContainer.innerHTML = '';
+    const filteredImages = (filterCategory === 'all')
+        ? imageData
+        : imageData.filter(image => image.category === filterCategory);
+
+    if (filteredImages.length === 0) {
+        galleryContainer.innerHTML = '<p class="no_images_found">No photos found for this category.</p>';
+        return;
+    }
+
+
+    filteredImages.forEach(image => {
+        const galleryItem = document.createElement('a');
+        galleryItem.href = image.largeSrc;
+        galleryItem.setAttribute('data-lightbox', filterCategory);
+        galleryItem.setAttribute('data-title', image.alt);
+        galleryItem.classList.add('item-card')
+        const imgElement = document.createElement('img');
+        imgElement.src = image.src;
+        imgElement.alt = image.alt;
+        imgElement.loading = 'lazy';
+
+        galleryItem.appendChild(imgElement);
+        galleryContainer.appendChild(galleryItem);
+    });
+}
+    /* HERE IS THE OLD LOGIC
+    function displayImages(filterCategory) {
         // Update description box
         if (categoryDescriptions[filterCategory]) {
             const descriptionData = categoryDescriptions[filterCategory];
@@ -64,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             galleryContainer.appendChild(galleryItem);
         });
     }
+    */
 
     // +++ NEW LOGIC (Reading from sessionStorage) - Use this instead +++
     // 1. Check if a filter value was saved in sessionStorage

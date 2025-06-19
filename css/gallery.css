@@ -75,3 +75,28 @@
 #gallery_current_filter_header strong {
     color: var(--primary_blue);
 }
+
+
+/* Work in progress sign for the gallery */
+.wip-gallery-sign {
+  background-color: #f8f9fa;
+  border: 2px dashed var(--primary_blue);
+  border-radius: 10px;
+  padding: 3rem;
+  text-align: center;
+  grid-column: 1 / -1; /* Make it span the full grid width */
+  margin: 2rem 0;
+}
+
+.wip-gallery-sign h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: var(--primary_blue);
+  margin-bottom: 1rem;
+}
+
+.wip-gallery-sign p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #555e6d;
+}
