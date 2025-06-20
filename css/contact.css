@@ -74,18 +74,16 @@
 @media (max-width: 820px) { 
     .contact-layout {
         flex-direction: column; 
-        padding: 1rem;
+        padding: 0rem;
+        text-align: center;
+        margin : 0 auto;
     }
     .contact-form-container {
         margin-bottom: 2.5rem; 
+        text-align: center;
+        margin-right: 2.5rem;
     }
-    .form-group label {
-    text-align: center;
-    }
-
-    /* --- FINAL FIX --- */
-    /* This rule targets the labels ONLY on mobile and centers their text. */
-    .form-group label {
+    section#contact form#contactForm .form-group label {
         text-align: center !important;
     }
 }
