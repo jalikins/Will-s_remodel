@@ -79,6 +79,9 @@
     .contact-form-container {
         margin-bottom: 2.5rem; 
     }
+    .form-group label {
+    text-align: center;
+    }
 
     /* --- FINAL FIX --- */
     /* This rule targets the labels ONLY on mobile and centers their text. */
