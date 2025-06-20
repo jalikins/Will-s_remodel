@@ -79,11 +79,17 @@
     .contact-form-container {
         margin-bottom: 2.5rem; 
     }
-    .contact-form-container .form-group label {
-        text-align: center; /* Center the label text */
+
+    /* --- THIS IS THE FIX --- */
+    /* Target the container for each label and input field */
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This will center the label and input field */
     }
 
-    .form-group {
-        text-align: center; /* Center the input fields below the labels */
+    .form-group label {
+        text-align: center; /* Ensures the text inside the label is centered */
+        width: 100%; /* Allows the label to take up full width for centering */
     }
 }
