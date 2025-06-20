@@ -3,6 +3,10 @@
 /* =================================================================== */
 
 /* --- Hero Section Styling --- */
+section h1 {
+    font-size: 2.5rem; 
+}
+
 #hero {
     background-image: url('../images/front_page/front_page\(1\).webp');
     background-size: cover;
@@ -53,7 +57,20 @@
     .box1 {
         display: inline-block;
     }
+    #hero {
+    /* This tells browsers on smaller screens to use the smaller, mobile-friendly image */
+    background-image: url('../images/front_page/front_page_small.webp');
+    }
+
+  #hero h1 {
+    font-size: 2.5rem; /* Slightly smaller text for mobile */
+    }
+
+  #hero p {
+    font-size: 1.1rem;
+    }
 }
+
 
 /* --- Light Sections: Use the warm off-white for a clean, premium paper feel --- */
 #services-overview,
