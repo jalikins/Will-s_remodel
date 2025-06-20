@@ -80,16 +80,9 @@
         margin-bottom: 2.5rem; 
     }
 
-    /* --- THIS IS THE FIX --- */
-    /* Target the container for each label and input field */
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* This will center the label and input field */
-    }
-
+    /* --- FINAL FIX --- */
+    /* This rule targets the labels ONLY on mobile and centers their text. */
     .form-group label {
-        text-align: center; /* Ensures the text inside the label is centered */
-        width: 100%; /* Allows the label to take up full width for centering */
+        text-align: center !important;
     }
 }
