@@ -518,14 +518,30 @@ section h1 {
     #customer_reviews {
         clip-path: none;
         margin-top: 0;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        padding-top: 4rem; /* Reduced vertical padding */
+        padding-bottom: 4rem; /* Reduced vertical padding */
     }
 
-    /* We also need to hide the corner accent color on mobile */
+    
+       /* THIS IS THE KEY FIX: Hides the large decorative shapes on mobile */
+    #why_choose_us::before,
+    #final_cta::before,
     #remodeling_process::before,
     #customer_reviews::before {
         display: none;
+    }
+
+    /* --- NEW --- */
+    /* Further adjustments for the "Ready to Start" section to improve fit */
+    #final_cta h2 {
+        font-size: 2rem; 
+       }
+
+    #final_cta p {
+        font-size: 1rem;  
+        max-width: 90%;  
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

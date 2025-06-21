@@ -70,20 +70,51 @@
     text-decoration: underline;
 }
 
-/* Responsive adjustment */
+/* =================================================================== */
+/* NEW: Responsive adjustments for mobile                            */
+/* =================================================================== */
 @media (max-width: 820px) { 
     .contact-layout {
-        flex-direction: column; 
-        padding: 0rem;
-        text-align: center;
-        margin : 0 auto;
+        /* Removes flexbox for a simpler block layout on mobile */
+        display: block; 
+        padding: 0; /* Resets padding to avoid extra spacing */
+        background-color: transparent; /* Hides the white box on mobile */
+        box-shadow: none; /* Removes the shadow for a flatter mobile design */
     }
-    .contact-form-container {
-        margin-bottom: 2.5rem; 
-        text-align: center;
-        margin-right: 2.5rem;
+
+    .contact-form-container,
+    .contact-details-container {
+        /* Ensures both containers take up the full width and removes leftover flex properties */
+        flex: none; 
+        width: 100%;
+        min-width: 100%;
+        margin: 0 0 3rem 0; /* Standardizes margin for vertical spacing */
+        padding: 0;
+        text-align: center; /* Center-aligns the text content inside */
     }
+
+    #contact .section-intro {
+        margin-bottom: 2rem; /* Reduces space below the intro text */
+    }
+    
+    .contact-form-container h3,
+    .contact-details-container h3 {
+        /* Ensures the headings are also centered properly */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Target the form labels specifically for better alignment */
     section#contact form#contactForm .form-group label {
-        text-align: center !important;
+        text-align: left !important; /* Keeps labels left-aligned for readability */
+        padding-left: 5px; /* Adds slight indent */
+    }
+
+    /* --- MAP FIX --- */
+    /* This new rule targets the iframe to make it responsive */
+    .contact-details-container iframe {
+        width: 100%; /* Makes the map take the full width of its container */
+        max-width: 400px; /* Optional: Prevents the map from becoming overly large */
+        height: 350px; /* Adjusts height for mobile */
     }
 }
